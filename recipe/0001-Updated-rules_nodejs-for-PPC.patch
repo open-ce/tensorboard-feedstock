@@ -1,0 +1,106 @@
+From f5abc7d45622a71aee622aee3a3ace85a60be175 Mon Sep 17 00:00:00 2001
+From: Nishidha Panpaliya <npanpa23@in.ibm.com>
+Date: Fri, 29 May 2020 11:20:27 +0000
+Subject: [PATCH] Updated-rules_nodejs-for-PPC
+
+---
+ WORKSPACE                              |  4 ++
+ third_party/rules_nodejs_ppc64le.patch | 71 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 75 insertions(+)
+ create mode 100644 third_party/rules_nodejs_ppc64le.patch
+
+diff --git a/WORKSPACE b/WORKSPACE
+index 72fb292..c3894d5 100644
+--- a/WORKSPACE
++++ b/WORKSPACE
+@@ -57,6 +57,10 @@ http_archive(
+         "http://mirror.tensorflow.org/github.com/bazelbuild/rules_nodejs/releases/download/1.6.0/rules_nodejs-1.6.0.tar.gz",
+         "https://github.com/bazelbuild/rules_nodejs/releases/download/1.6.0/rules_nodejs-1.6.0.tar.gz",
+     ],
++    patches = [
++            "//third_party:rules_nodejs_ppc64le.patch",
++    ],
++    patch_args = ["-p1"],
+ )
+ 
+ load("@build_bazel_rules_nodejs//:index.bzl", "yarn_install")
+diff --git a/third_party/rules_nodejs_ppc64le.patch b/third_party/rules_nodejs_ppc64le.patch
+new file mode 100644
+index 0000000..012ee48
+--- /dev/null
++++ b/third_party/rules_nodejs_ppc64le.patch
+@@ -0,0 +1,71 @@
++diff -Naur rules_nodesjs_org/internal/common/os_name.bzl rules_nodejs_mod/internal/common/os_name.bzl
++--- rules_nodesjs_org/internal/common/os_name.bzl	2000-01-01 00:00:00.000000000 +0000
+++++ rules_nodejs_mod/internal/common/os_name.bzl	2020-05-29 10:32:08.344054851 +0000
++@@ -18,7 +18,7 @@
++ OS_ARCH_NAMES = [
++     ("darwin", "amd64"),
++     ("windows", "amd64"),
++-    ("linux", "amd64"),
+++    ("linux", "ppc64le"),
++ ]
++ 
++ OS_NAMES = ["_".join(os_arch_name) for os_arch_name in OS_ARCH_NAMES]
++diff -Naur rules_nodesjs_org/internal/node/node_repositories.bzl rules_nodejs_mod/internal/node/node_repositories.bzl
++--- rules_nodesjs_org/internal/node/node_repositories.bzl	2000-01-01 00:00:00.000000000 +0000
+++++ rules_nodejs_mod/internal/node/node_repositories.bzl	2020-05-29 11:18:08.987048045 +0000
++@@ -108,6 +108,7 @@
++             "12.13.0-darwin_amd64": ("node-v12.13.0-darwin-x64.tar.gz", "node-v12.13.0-darwin-x64", "49a7374670a111b033ce16611b20fd1aafd3296bbc662b184fe8fb26a29c22cc"),
++             "12.13.0-linux_amd64": ("node-v12.13.0-linux-x64.tar.xz", "node-v12.13.0-linux-x64", "7a57ef2cb3036d7eacd50ae7ba07245a28336a93652641c065f747adb2a356d9"),
++             "12.13.0-windows_amd64": ("node-v12.13.0-win-x64.zip", "node-v12.13.0-win-x64", "6f920cebeecb4957b4ef0def6d9b04c49d4582864f8d1a207ce8d0665865781a"),
+++            "12.13.0-linux_ppc64le": ("node-v12.13.0-linux-ppc64le.tar.gz", "node-v12.13.0-linux-ppc64le", "5943b35744921137078a3af71cda2abdc28372adbba7ccb138e840c9bbcfcb43"),
++             # When adding a new version. please update /docs/install.md
++         },
++         doc = """Custom list of node repositories to use
++diff -Naur rules_nodesjs_org/toolchains/node/BUILD.bazel rules_nodejs_mod/toolchains/node/BUILD.bazel
++--- rules_nodesjs_org/toolchains/node/BUILD.bazel	2000-01-01 00:00:00.000000000 +0000
+++++ rules_nodejs_mod/toolchains/node/BUILD.bazel	2020-05-29 11:10:06.494019599 +0000
++@@ -36,6 +36,14 @@
++ )
++ 
++ platform(
+++    name = "linux_ppc64le",
+++    constraint_values = [
+++        "@bazel_tools//platforms:linux",
+++        "@bazel_tools//platforms:ppc",
+++    ],
+++)
+++
+++platform(
++     name = "windows_amd64",
++     constraint_values = [
++         "@bazel_tools//platforms:windows",
++@@ -67,7 +75,7 @@
++         "@bazel_tools//src/conditions:darwin_x86_64": "@nodejs_darwin_amd64_config//:toolchain",
++         "@bazel_tools//src/conditions:linux_x86_64": "@nodejs_linux_amd64_config//:toolchain",
++         "@bazel_tools//src/conditions:windows": "@nodejs_windows_amd64_config//:toolchain",
++-        "//conditions:default": "@nodejs_linux_amd64_config//:toolchain",
+++        "//conditions:default": "@nodejs_linux_ppc64le_config//:toolchain",
++     }),
++     visibility = ["//visibility:public"],
++ )
++@@ -80,7 +88,7 @@
++         "@bazel_tools//src/conditions:darwin_x86_64": "@nodejs_darwin_amd64//:node_bin",
++         "@bazel_tools//src/conditions:linux_x86_64": "@nodejs_linux_amd64//:node_bin",
++         "@bazel_tools//src/conditions:windows": "@nodejs_windows_amd64//:node_bin",
++-        "//conditions:default": "@nodejs_linux_amd64//:node_bin",
+++        "//conditions:default": "@nodejs_linux_ppc64le//:node_bin",
++     }),
++     visibility = ["//visibility:public"],
++ )
++@@ -89,9 +97,9 @@
++     name = "node_linux_toolchain",
++     target_compatible_with = [
++         "@bazel_tools//platforms:linux",
++-        "@bazel_tools//platforms:x86_64",
+++        "@bazel_tools//platforms:ppc",
++     ],
++-    toolchain = "@nodejs_linux_amd64_config//:toolchain",
+++    toolchain = "@nodejs_linux_ppc64le_config//:toolchain",
++     toolchain_type = ":toolchain_type",
++ )
++ 
+-- 
+1.8.3.1
+

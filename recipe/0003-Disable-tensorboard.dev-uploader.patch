@@ -1,0 +1,63 @@
+From 603c9d4d3709882c232f88f2ebce9962a3cbb60a Mon Sep 17 00:00:00 2001
+From: Nishidha Panpaliya <npanpa23@in.ibm.com>
+Date: Fri, 28 Aug 2020 08:57:23 +0000
+Subject: [PATCH] Disable tensorboard.dev uploader
+
+Until after we decide how to handle possible issues shipping
+RSA.
+---
+ tensorboard/data/experimental/__init__.py | 2 +-
+ tensorboard/main.py                       | 4 +---
+ tensorboard/pip_package/requirements.txt  | 4 +---
+ 3 files changed, 3 insertions(+), 7 deletions(-)
+
+diff --git a/tensorboard/data/experimental/__init__.py b/tensorboard/data/experimental/__init__.py
+index 387d91b..0dee989 100644
+--- a/tensorboard/data/experimental/__init__.py
++++ b/tensorboard/data/experimental/__init__.py
+@@ -17,4 +17,4 @@ from __future__ import absolute_import
+ from __future__ import division
+ from __future__ import print_function
+ 
+-from tensorboard.data.experimental.experiment_from_dev import ExperimentFromDev
++#from tensorboard.data.experimental.experiment_from_dev import ExperimentFromDev
+diff --git a/tensorboard/main.py b/tensorboard/main.py
+index a5e8eff..bfa85a0 100644
+--- a/tensorboard/main.py
++++ b/tensorboard/main.py
+@@ -44,7 +44,6 @@ from tensorboard import default
+ from tensorboard import program
+ from tensorboard.compat import tf
+ from tensorboard.plugins import base_plugin
+-from tensorboard.uploader import uploader_subcommand
+ from tensorboard.util import tb_logging
+ 
+ 
+@@ -63,8 +62,7 @@ def run_main():
+ 
+     tensorboard = program.TensorBoard(
+         default.get_plugins(),
+-        program.get_default_assets_zip_provider(),
+-        subcommands=[uploader_subcommand.UploaderSubcommand()],
++        program.get_default_assets_zip_provider()
+     )
+     try:
+         from absl import app
+diff --git a/tensorboard/pip_package/requirements.txt b/tensorboard/pip_package/requirements.txt
+index de7f134..d61f2c3 100644
+--- a/tensorboard/pip_package/requirements.txt
++++ b/tensorboard/pip_package/requirements.txt
+@@ -18,9 +18,7 @@
+ absl-py >= 0.4
+ # futures is a backport of the python 3.2+ concurrent.futures module
+ futures >= 3.1.1; python_version < "3"
+-grpcio >= 1.24.3
+-google-auth >= 1.6.3, < 2
+-google-auth-oauthlib >= 0.4.1, < 0.5
++grpcio >= 1.6.3
+ markdown >= 2.6.8
+ numpy >= 1.12.0
+ protobuf >= 3.6.0
+-- 
+1.8.3.1
+

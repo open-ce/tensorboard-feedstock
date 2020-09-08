@@ -1,0 +1,66 @@
+{% set version = "2.3.0" %}
+
+package:
+  name: tensorboard
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/tensorflow/tensorboard.git
+  git_rev: {{ version }}
+  patches:
+    - 0001-Updated-rules_nodejs-for-PPC.patch   # [ppc64le]
+    - 0002-CVE-2019-1010266.patch
+    - 0003-Disable-tensorboard.dev-uploader.patch
+    - 0004-Hack-to-use-https-for-repo1.maven.org.patch
+    - 0005-PSIRT-PVR0214103-for-bleach.patch
+
+build:
+  number: 1
+  noarch: python
+  # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
+  # packages as it conflicts with a file in this package.
+  entry_points:
+    - tensorboard = tensorboard.main:run_main
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - bazel {{ bazel }} 
+    - python # noarch package; don't tie to specific python version
+    - numpy {{ numpy }}
+    - absl-py {{ absl_py }}
+  run:
+    - python # noarch package; don't tie to specific python version
+    - absl-py {{ absl_py }}
+    - grpcio {{ grpcio }}
+    - markdown {{ markdown }}
+    - numpy {{ numpy }}
+    - protobuf {{ protobuf }}
+    - requests {{ requests }}
+    - six {{ six }}
+    - tensorboard-plugin-wit {{ tensorboard_plugin_wit }}
+    - werkzeug {{ werkzeug }}
+    - tensorflow-base {{ tensorflow }}
+    - tensorflow-estimator {{ tensorflow }}
+test:
+  imports:
+    - tensorboard
+  commands:
+    - tensorboard --help
+
+about:
+  home: http://tensorflow.org/
+  license: Apache-2.0
+  license_family: Apache
+  license_file: {{ SRC_DIR }}/LICENSE
+  summary: TensorFlow's Visualization Toolkit.
+  description: |
+    TensorBoard is a suite of web applications for inspecting and understanding
+    your TensorFlow runs and graphs.
+  dev_url: https://github.com/tensorflow/tensorboard
+
+extra:
+  recipe-maintainers:
+    - open-ce/open-ce-dev-team
