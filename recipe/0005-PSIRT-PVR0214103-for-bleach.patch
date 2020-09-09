@@ -1,0 +1,52 @@
+From 23f7947db79c12dd9b7d0b303bdbcb5b5d23fecc Mon Sep 17 00:00:00 2001
+From: Nishidha Panpaliya <npanpa23@in.ibm.com>
+Date: Sat, 9 May 2020 13:22:40 +0000
+Subject: [PATCH] [PSIRT] PVR0214103 for bleach - updated to 3.1.4
+
+---
+ third_party/bleach.BUILD | 5 ++---
+ third_party/python.bzl   | 8 ++++----
+ 2 files changed, 6 insertions(+), 7 deletions(-)
+
+diff --git a/third_party/bleach.BUILD b/third_party/bleach.BUILD
+index a505afd..e9208c4 100644
+--- a/third_party/bleach.BUILD
++++ b/third_party/bleach.BUILD
+@@ -11,12 +11,11 @@ py_library(
+     srcs = [
+         "bleach/__init__.py",
+         "bleach/callbacks.py",
+-        "bleach/encoding.py",
++        "bleach/html5lib_shim.py",
+         "bleach/linkifier.py",
+         "bleach/sanitizer.py",
+         "bleach/utils.py",
+-        "bleach/version.py",
+-    ],
++    ] + glob(["bleach/_vendor/**/*.py"]),
+     srcs_version = "PY2AND3",
+     deps = [
+         "@org_html5lib",
+diff --git a/third_party/python.bzl b/third_party/python.bzl
+index 854a5c5..39b9711 100644
+--- a/third_party/python.bzl
++++ b/third_party/python.bzl
+@@ -58,11 +58,11 @@ def tensorboard_python_workspace():
+     http_archive(
+         name = "org_mozilla_bleach",
+         urls = [
+-            "http://mirror.tensorflow.org/github.com/mozilla/bleach/archive/v2.0.tar.gz",
+-            "https://github.com/mozilla/bleach/archive/v2.0.tar.gz",
++            "http://mirror.tensorflow.org/github.com/mozilla/bleach/archive/v3.1.4.tar.gz",
++            "https://github.com/mozilla/bleach/archive/v3.1.4.tar.gz",
+         ],
+-        strip_prefix = "bleach-2.0",
+-        sha256 = "789dcf3e7daf79c4c78518c6ebafd51bbaf111ac4263a97c08cf8d6a27eda820",
++        strip_prefix = "bleach-3.1.4",
++        sha256 = "436cbe96fe181355607523286b62b4fa836018b524aa815983639190bdd2883b",
+         build_file = str(Label("//third_party:bleach.BUILD")),
+     )
+ 
+-- 
+1.8.3.1
+

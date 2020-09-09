@@ -1,0 +1,79 @@
+From 2d845214803f6dc3ad3020d6579a6b33e64bf010 Mon Sep 17 00:00:00 2001
+From: "William D. Irons" <wdirons@us.ibm.com>
+Date: Thu, 16 Jan 2020 17:20:30 +0000
+Subject: [PATCH] Hack to use https for repo1.maven.org
+
+repo1.maven.org now requires https:
+https://support.sonatype.com/hc/en-us/articles/360041287334
+
+So we need to change this line to use https:
+https://github.com/bazelbuild/rules_closure/blob/0.10.0/closure/repositories.bzl#L670
+
+Since we can only patch TensorBoard, we modify TensorBoard's WORKSPACE
+file to overide the rule defined in that above file. Those instructions
+can be found in README.md at https://github.com/bazelbuild/rules_closure/
+under 'Overriding Dependency Versions'
+---
+ WORKSPACE | 42 +++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 41 insertions(+), 1 deletion(-)
+
+diff --git a/WORKSPACE b/WORKSPACE
+index 30007945..406006a3 100644
+--- a/WORKSPACE
++++ b/WORKSPACE
+@@ -44,11 +44,51 @@ http_archive(
+     ],
+ )
+ 
+-load("@io_bazel_rules_closure//closure:repositories.bzl", "rules_closure_dependencies")
++load("@io_bazel_rules_closure//closure:repositories.bzl", "rules_closure_dependencies", "rules_closure_toolchains")
+ rules_closure_dependencies(
+     omit_com_google_protobuf = True,
+     omit_com_google_protobuf_js = True,
++    omit_com_google_javascript_closure_compiler = True,
+ )
++rules_closure_toolchains()
++
++load("@bazel_tools//tools/build_defs/repo:java.bzl", "java_import_external")
++java_import_external(
++    name = "com_google_javascript_closure_compiler",
++    licenses = ["reciprocal"],  # MPL v1.1 (Rhino AST), Apache 2.0 (JSCompiler)
++    jar_urls = [
++        "https://mirror.bazel.build/repo1.maven.org/maven2/com/google/javascript/closure-compiler-unshaded/v20190909/closure-compiler-unshaded-v20190909.jar",
++        "https://repo1.maven.org/maven2/com/google/javascript/closure-compiler-unshaded/v20190909/closure-compiler-unshaded-v20190909.jar",
++    ],
++    jar_sha256 = "9d8ba854b02ad713a50b9fc0dc0a82ac5fcdf980ef624f3354b6e43a0ac968d9",
++    deps = [
++        "@com_google_code_gson",
++        "@com_google_guava",
++        "@com_google_code_findbugs_jsr305",
++        "@com_google_protobuf//:protobuf_java",
++    ],
++    extra_build_file_content = "\n".join([
++        "java_binary(",
++        "    name = \"main\",",
++        "    main_class = \"com.google.javascript.jscomp.CommandLineRunner\",",
++        "    output_licenses = [\"unencumbered\"],",
++        "    runtime_deps = [",
++        "        \":com_google_javascript_closure_compiler\",",
++        "        \"@args4j\",",
++        "    ],",
++        ")",
++        "",
++        "genrule(",
++        "    name = \"externs\",",
++        "    srcs = [\"closure-compiler-unshaded-v20190909.jar\"],",
++        "    outs = [\"externs.zip\"],",
++        "    tools = [\"@bazel_tools//tools/jdk:jar\"],",
++        "    cmd = \"$(location @bazel_tools//tools/jdk:jar) -xf $(location :closure-compiler-unshaded-v20190909.jar) externs.zip; mv externs.zip $@\",",
++        ")",
++        "",
++    ]),
++)
++
+ 
+ http_archive(
+     name = "build_bazel_rules_nodejs",
+-- 
+2.17.1
+
