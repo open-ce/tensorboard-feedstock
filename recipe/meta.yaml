@@ -42,8 +42,7 @@ requirements:
     - six {{ six }}
     - tensorboard-plugin-wit {{ tensorboard_plugin_wit }}
     - werkzeug {{ werkzeug }}
-    - tensorflow-base {{ tensorflow }}
-    - tensorflow-estimator {{ tensorflow }}
+
 test:
   imports:
     - tensorboard
