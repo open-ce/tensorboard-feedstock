@@ -1,4 +1,4 @@
-{% set version = "2.3.0" %}
+{% set version = "2.4" %}
 
 package:
   name: tensorboard
@@ -10,7 +10,6 @@ source:
   patches:
     - 0001-Updated-rules_nodejs-for-PPC.patch   # [ppc64le]
     - 0002-CVE-2019-1010266.patch
-    - 0003-Disable-tensorboard.dev-uploader.patch
     - 0004-Hack-to-use-https-for-repo1.maven.org.patch
     - 0005-PSIRT-PVR0214103-for-bleach.patch
 
@@ -34,6 +33,8 @@ requirements:
   run:
     - python # noarch package; don't tie to specific python version
     - absl-py {{ absl_py }}
+    - google-auth
+    - google-auth-oauthlib
     - grpcio {{ grpcio }}
     - markdown {{ markdown }}
     - numpy {{ numpy }}
