@@ -16,12 +16,15 @@ set -ex
 rm -rf "${SP_DIR}/setuptools/command/launcher manifest.xml"
 rm -rf "${SP_DIR}/setuptools/script (dev).tmpl"
 
+￼
+# Pick up additional variables defined from the conda build environment
+SCRIPT_DIR=$RECIPE_DIR/../buildscripts
+$SCRIPT_DIR/set_python_path_for_bazelrc.sh $SRC_DIR
+￼
 # build using bazel
 mkdir -p ./bazel_output_base
-BAZEL_OPTS="--batch"
-bazel ${BAZEL_OPTS} build \
+bazel --bazelrc=${SRC_DIR}/python_configure.bazelrc build \
     --host_javabase=@bazel_tools//tools/jdk:remote_jdk11 \
-    --extra_toolchains=@bazel_tools//tools/python:autodetecting_toolchain_nonstrict \
     //tensorboard/pip_package:build_pip_package
 
 # Adapted from: https://github.com/tensorflow/tensorboard/blob/1.9.0/tensorboard/pip_package/build_pip_package.sh
