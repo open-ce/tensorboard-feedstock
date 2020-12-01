@@ -69,3 +69,6 @@ python -m pip install . --no-deps --ignore-installed -vvv
 
 # Remove bin/tensorboard since the entry_point takes care of creating this.
 rm $PREFIX/bin/tensorboard
+
+bazel clean --expunge
+bazel shutdown
