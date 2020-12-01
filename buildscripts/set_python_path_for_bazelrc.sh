@@ -15,9 +15,7 @@ set -ex
 BAZEL_RC_DIR=$1
 
 cat > $BAZEL_RC_DIR/python_configure.bazelrc << EOF
-build --incompatible_use_python_toolchains=false
 build --action_env PYTHON_BIN_PATH="$PYTHON"
 build --action_env PYTHON_LIB_PATH="$SP_DIR"
-build --action_env PATH="$PREFIX/bin:$PATH"
 build --python_path="$PYTHON"
 EOF
