@@ -1,4 +1,4 @@
-{% set version = "2.4" %}
+{% set version = "2.4.0" %}
 
 package:
   name: tensorboard
@@ -10,7 +10,6 @@ source:
   patches:
     - 0001-Updated-rules_nodejs-for-PPC.patch   # [ppc64le]
     - 0002-CVE-2019-1010266.patch
-    - 0004-Hack-to-use-https-for-repo1.maven.org.patch
     - 0005-PSIRT-PVR0214103-for-bleach.patch
 
 build:
