@@ -1,0 +1,757 @@
+- name: rules_closure
+  license: Apache-2
+  url:
+    - https://github.com/bazelbuild/rules_closure/archive/db4683a2a1836ac8e265804ca5fa31852395185b.tar.gz
+  version: db4683a2a1836ac8e265804ca5fa31852395185b
+- name: rules_nodejs
+  license: Apache-2
+  url:
+    - https://github.com/bazelbuild/rules_nodejs/archive/1.6.0.tar.gz
+  version: 1.6.0
+- name: rules_sass
+  license: Apache-2
+  url:
+    - https://github.com/bazelbuild/rules_sass/archive/1.26.3.zip
+  version: 1.26.3
+- name: rules_webtesting
+  license: Apache-2
+  url:
+    - https://github.com/bazelbuild/rules_webtesting/archive/0.3.1.tar.gz
+  version: 0.3.1
+- name: rules_rust
+  license: Apache-2
+  url:
+    - https://github.com/bazelbuild/rules_rust/archive/afee872f08ed67b53caab2e1d2fefd501dce81f4.tar.gz
+  version: afee872f08ed67b53caab2e1d2fefd501dce81f4
+- name: clutz
+  license: MIT
+  url:
+    - https://github.com/angular/clutz/archive/7ef7cdb156cd5f0359eb3b22b259d780e3ad825d.tar.gz
+  version: ddd20ebfcdce6a24ca4c8235033f9e651b00d118
+- name: facets
+  license: Apache-2
+  url:
+    - https://github.com/pair-code/facets/archive/7ef7cdb156cd5f0359eb3b22b259d780e3ad825d.tar.gz
+  version: 7ef7cdb156cd5f0359eb3b22b259d780e3ad825d
+- name: fonts.gstatic.com/roboto
+  license: Apache-2
+  url:
+    - https://fonts.gstatic.com/s/roboto/v18
+  version: v18
+- name: nodejs
+  license: 'MIT/nodejs: https://github.com/nodejs/node/blob/master/LICENSE'
+  url:
+    - http://nodejs.org/dist/v6.9.1/node-v6.9.1-linux-x64.tar.xz
+  version: 6.9.1
+- name: TypeScript
+  license: Apache-2
+  url:
+    - https://github.com/microsoft/TypeScript/archive/v2.9.2.tar.gz
+  version: 2.9.2
+- name: closure-compiler
+  license: Apache-2
+  url:
+    - https://github.com/google/closure-compiler/archive/v20190513.tar.gz
+    - https://raw.githubusercontent.com/google/closure-compiler/v20180402/contrib/externs/polymer-1.0.js
+  version: v20190513
+- name: three.js
+  license: MIT
+  url:
+    - https://github.com/mrdoob/three.js/archive/r108.tar.gz
+  version: r108
+- name: lodash
+  license: MIT
+  url:
+    - https://github.com/lodash/lodash/archive/4.17.5.tar.gz
+  version: 4.17.5
+- name: numeric
+  license: MIT
+  url:
+    - https://github.com/sloisel/numeric/archive/v1.2.6.tar.gz
+  version: 1.2.6
+- name: umap-js
+  license: Apache-2
+  url:
+    - https://unpkg.com/umap-js@1.2.2/lib/umap-js.min.js
+  version: 1.2.2
+- name: plottable
+  license: MIT
+  url:
+    - https://registry.npmjs.org/plottable/-/plottable-3.7.0.tgz
+  version: 3.7.0
+- name: dagre
+  license: MIT
+  url:
+    - https://github.com/dagrejs/dagre/archive/v0.8.2.tar.gz
+  version: 0.8.2
+- name: graphlib
+  license: MIT
+  url:
+    - https://github.com/dagrejs/graphlib/archive/v2.1.5.tar.gz
+  version: 2.1.5
+- name: vaadin-split-layout
+  license: MIT
+  url:
+    - https://github.com/vaadin/vaadin-split-layout/archive/v1.1.0.tar.gz
+  version: 1.1.0
+- name: vaadin-grid
+  license: Apache-2
+  url:
+    - https://github.com/vaadin/vaadin-grid/archive/v3.0.2.tar.gz
+  version: 3.0.2
+- name: accessibility-developer-tools
+  license: Apache-2
+  url:
+    - https://registry.npmjs.org/accessibility-developer-tools/-/accessibility-developer-tools-2.10.0.tgz
+  version: 2.10.0
+- name: async
+  license: MIT
+  url:
+    - https://registry.npmjs.org/async/-/async-1.5.0.tgz
+  version: 1.5.0
+- name: chai
+  license: MIT
+  url:
+    - https://registry.npmjs.org/chai/-/chai-3.5.0.tgz
+  version: 3.5.0
+  copyright_string: "Copyright (c) 2011-2015 Jake Luer <jake@alogicalparadox.com>"
+- name: mocha
+  license: MIT
+  url:
+    - https://registry.npmjs.org/mocha/-/mocha-2.5.3.tgz
+  version: 2.5.3
+- name: sinon
+  license: BSD-equivalent
+  url:
+    - https://registry.npmjs.org/sinon/-/sinon-1.17.4.tgz
+  version: 1.17.4
+- name: sinon-chai
+  license: BSD-equivalent
+  url:
+    - https://registry.npmjs.org/sinon-chai/-/sinon-chai-2.8.0.tgz
+  version: 2.8.0
+- name: stacky
+  license: BSD-equivalent
+  url:
+    - https://registry.npmjs.org/stacky/-/stacky-1.3.1.tgz
+  version: 1.3.1
+- name: web-component-tester
+  license: BSD-equivalent
+  url:
+    - https://registry.npmjs.org/web-component-tester/-/web-component-tester-4.3.6.tgz
+  version: 4.3.6
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.test-fixture
+  url:
+    - https://github.com/PolymerElements/test-fixture/archive/v2.0.1.tar.gz
+  version: 2.0.1
+- name: Polymer
+  license: BSD-equivalent
+  url:
+    - https://github.com/polymer/polymer/archive/v2.7.0.tar.gz
+  version: 2.7.0
+- name: webcomponents.shadycss
+  license: BSD-equivalent
+  url:
+    - https://github.com/webcomponents/shadycss/archive/v1.9.1.tar.gz
+  version: 1.9.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-a11y-announcer
+  url:
+    - https://github.com/PolymerElements/iron-a11y-announcer/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- name: PolymerElements.iron-a11y-keys-behavior
+  license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  url:
+    - https://github.com/PolymerElements/iron-a11y-keys-behavior/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- name: PolymerElements.iron-ajax
+  license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  url:
+    - https://github.com/PolymerElements/iron-ajax/archive/v2.1.3.tar.gz
+  version: 2.1.3
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-autogrow-textarea
+  url:
+    - https://github.com/PolymerElements/iron-autogrow-textarea/archive/v2.2.0.tar.gz
+  version: 2.2.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-behaviors
+  url:
+    - https://github.com/PolymerElements/iron-behaviors/archive/v2.1.1.tar.gz
+  version: 2.1.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-checked-elements-behavior
+  url:
+    - https://github.com/PolymerElements/iron-checked-element-behavior/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-collapse
+  url:
+    - https://github.com/PolymerElements/iron-collapse/archive/v2.2.1.tar.gz
+  version: 2.2.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-demo-helpers
+  url:
+    - https://github.com/PolymerElements/iron-demo-helpers/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-dropdown*
+  url:
+    - https://github.com/PolymerElements/iron-dropdown/archive/v2.2.1.tar.gz
+  version: 2.2.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-fit-behavior
+  url:
+    - https://github.com/PolymerElements/iron-fit-behavior/archive/v2.1.1.tar.gz
+  version: 2.1.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-flex-layout
+  url:
+    - https://github.com/PolymerElements/iron-flex-layout/archive/v2.0.3.tar.gz
+  version: 2.0.3
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-form-element-behavior*
+  url:
+    - https://github.com/PolymerElements/iron-form-element-behavior/archive/v2.1.3.tar.gz
+  version: 2.1.3
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-icon
+  url:
+    - https://github.com/PolymerElements/iron-icon/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-icons
+  url:
+    - https://github.com/PolymerElements/iron-icons/archive/v2.1.1.tar.gz
+  version: 2.1.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-iconset-svg
+  url:
+    - https://github.com/PolymerElements/iron-iconset-svg/archive/v2.2.0.tar.gz
+  version: 2.2.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-image
+  url:
+    - https://github.com/PolymerElements/iron-image/archive/v2.2.1.tar.gz
+  version: 2.2.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-input
+  url:
+    - https://github.com/PolymerElements/iron-input/archive/v2.1.3.tar.gz
+  version: 2.1.3
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-list
+  url:
+    - https://github.com/PolymerElements/iron-list/archive/v2.0.19.tar.gz
+  version: 2.0.19
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-menu-behavior
+  url:
+    - https://github.com/PolymerElements/iron-menu-behavior/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-meta
+  url:
+    - https://github.com/PolymerElements/iron-meta/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-overlay-behavior
+  url:
+    - https://github.com/PolymerElements/iron-overlay-behavior/archive/v2.3.3.tar.gz
+  version: 2.3.3
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-pages
+  url:
+    - https://github.com/PolymerElements/iron-pages/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-range-behavior
+  url:
+    - https://github.com/PolymerElements/iron-range-behavior/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-resizeable-behavior
+  url:
+    - https://github.com/PolymerElements/iron-resizable-behavior/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-scroll-target-behavior
+  url:
+    - https://github.com/PolymerElements/iron-scroll-target-behavior/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-selector
+  url:
+    - https://github.com/PolymerElements/iron-selector/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-validatable-behavior*
+  url:
+    - https://github.com/PolymerElements/iron-validatable-behavior/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: ISC
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.iron-validator-behavior*
+  url:
+    - https://github.com/PolymerElements/iron-validator-behavior/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- name: marked
+  license: MIT
+  url:
+    - https://github.com/chjj/marked/archive/v0.3.2.tar.gz
+  version: 0.3.2
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.marked-element
+  url:
+    - https://github.com/PolymerElements/marked-element/archive/v2.4.0.tar.gz
+  version: 2.4.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.neon-animation
+  url:
+    - https://github.com/PolymerElements/neon-animation/archive/v2.2.1.tar.gz
+  version: 2.2.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-behaviors
+  url:
+    - https://github.com/PolymerElements/paper-behaviors/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-card
+  url:
+    - https://github.com/PolymerElements/paper-card/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-button
+  url:
+    - https://github.com/PolymerElements/paper-button/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-checkbox
+  url:
+    - https://github.com/PolymerElements/paper-checkbox/archive/v2.0.3.tar.gz
+  version: 2.0.3
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-dialog
+  url:
+    - https://github.com/PolymerElements/paper-dialog/archive/v2.1.1.tar.gz
+  version: 2.1.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-dialog-behavior*
+  url:
+    - https://github.com/PolymerElements/paper-dialog-behavior/archive/v2.2.2.tar.gz
+  version: 2.2.2
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-dialog-scrollable
+  url:
+    - https://github.com/PolymerElements/paper-dialog-scrollable/archive/v2.2.0.tar.gz
+  version: 2.2.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-dropdown-menu*
+  url:
+    - https://github.com/PolymerElements/paper-dropdown-menu/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-header-panel
+  url:
+    - https://github.com/PolymerElements/paper-header-panel/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-icon-button
+  url:
+    - https://github.com/PolymerElements/paper-icon-button/archive/v2.2.0.tar.gz
+  version: 2.2.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-input
+  url:
+    - https://github.com/PolymerElements/paper-input/archive/v2.2.3.tar.gz
+  version: 2.2.3
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-item
+  url:
+    - https://github.com/PolymerElements/paper-item/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-listbox
+  url:
+    - https://github.com/PolymerElements/paper-listbox/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-material
+  url:
+    - https://github.com/PolymerElements/paper-material/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-menu-button*
+  url:
+    - https://github.com/PolymerElements/paper-menu-button/archive/v2.1.1.tar.gz
+  version: 2.1.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-progress
+  url:
+    - https://github.com/PolymerElements/paper-progress/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-radio-button
+  url:
+    - https://github.com/PolymerElements/paper-radio-button/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-radio-group
+  url:
+    - https://github.com/PolymerElements/paper-radio-group/archive/v2.2.0.tar.gz
+  version: 2.2.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-ripple
+  url:
+    - https://github.com/PolymerElements/paper-ripple/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-slider
+  url:
+    - https://github.com/PolymerElements/paper-slider/archive/v2.0.6.tar.gz
+  version: 2.0.6
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-spinner
+  url:
+    - https://github.com/PolymerElements/paper-spinner/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-style
+  url:
+    - https://github.com/PolymerElements/paper-styles/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-tabs
+  url:
+    - https://github.com/PolymerElements/paper-tabs/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-toast
+  url:
+    - https://github.com/PolymerElements/paper-toast/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-toggle-button*
+  url:
+    - https://github.com/PolymerElements/paper-toggle-button/archive/v2.1.1.tar.gz
+  version: 2.1.1
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-toolbar
+  url:
+    - https://github.com/PolymerElements/paper-toolbar/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.paper-tooltip
+  url:
+    - https://github.com/PolymerElements/paper-tooltip/archive/v2.1.1.tar.gz
+  version: 2.1.1
+- name: prism
+  license: MIT
+  url:
+    - https://github.com/PrismJS/prism/archive/v1.16.0.tar.gz
+  version: 1.16.0
+- license: BSD-equivalent
+  license_url: http://polymer.github.io/LICENSE.txt
+  name: PolymerElements.prism-element
+  url:
+    - https://github.com/PolymerElements/prism-element/archive/v2.1.0.tar.gz
+  version: 2.1.0
+- name: web-animations
+  license: Apache-2
+  url:
+    - https://github.com/web-animations/web-animations-js/archive/2.2.1.tar.gz
+  version: 2.2.1
+- name: webcomponents
+  license: BSD-equivalent
+  url:
+    - https://github.com/webcomponents/webcomponentsjs/archive/v1.3.3.tar.gz
+  version: 1.3.3
+- name: Markdown
+  license: BSD-equivalent
+  url:
+    - https://pypi.python.org/packages/1d/25/3f6d2cb31ec42ca5bd3bfbea99b63892b735d76e26f20dd2dcc34ffe4f0d/Markdown-2.6.8.tar.gz
+  version: 2.6.8
+- name: urllib3
+  license: MIT
+  url:
+    - https://pypi.python.org/packages/cb/34/db09a2f1e27c6ded5dd42afb0e3e2cf6f51ace7d75726385e8a3b1993b17/urllib3-1.25.tar.gz
+  version: 1.25.0
+- name: html5lib
+  license: MIT
+  url:
+    - https://github.com/html5lib/html5lib-python/archive/1.0.1.tar.gz
+  version: 1.0.1
+- name: bleach
+  license: Apache-2
+  url:
+    - https://github.com/mozilla/bleach/archive/v2.0.tar.gz
+  version: 2.0.0
+- name: Werkzeug
+  license: BSD-equivalent
+  url:
+    - https://files.pythonhosted.org/packages/59/2d/b24bab64b409e22f026fee6705b035cb0698399a7b69449c49442b30af47/Werkzeug-0.15.4.tar.gz
+  version: 0.15.4
+- name: webencodings
+  license: BSD-equivalent
+  url:
+    - https://github.com/gsnedders/python-webencodings/archive/v0.5.1.tar.gz
+  version: 0.5.1
+- name: Mock
+  license: BSD-equivalent
+  url:
+    - https://files.pythonhosted.org/packages/85/60/ec8c1af81337bab0caba188b218b6758bc94f125f49062f7c5f0647749d2/mock-1.0.0.tar.gz
+  version: 1.0.0
+- name: Six
+  license: MIT
+  url:
+    - https://mirror.bazel.build/pypi.python.org/packages/source/s/six/six-1.10.0.tar.gz
+  version: 1.13.0
+- name: portpicker
+  license: Apache-2
+  url:
+    - https://pypi.python.org/packages/96/48/0e1f20fdc0b85cc8722284da3c5b80222ae4036ad73210a97d5362beaa6d/portpicker-1.1.1.tar.gz
+  version: 1.1.1
+- name: DefinitelyTyped.chai
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/ebc69904eb78f94030d5d517b42db20867f679c0/chai/chai.d.ts
+  version: ebc69904eb78f94030d5d517b42db20867f679c0
+- name: DefinitelyTyped.google.analytics
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/5d0f2126c8dac8fce0ff020218aea06607213b0d/google.analytics/ga.d.ts
+  version: 5d0f2126c8dac8fce0ff020218aea06607213b0d
+- name: DefinitelyTyped.lodash
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/efd40e67ff323f7147651bdbef03c03ead7b1675/lodash/lodash.d.ts
+  version: efd40e67ff323f7147651bdbef03c03ead7b1675
+- name: DefinitelyTyped.mocha
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/ebc69904eb78f94030d5d517b42db20867f679c0/mocha/mocha.d.ts
+  version: ebc69904eb78f94030d5d517b42db20867f679c0
+- name: DefinitelyTyped.sinon
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/708609e0764daeb5eb64104af7aca50c520c4e6e/sinon/sinon.d.ts
+  version: 708609e0764daeb5eb64104af7aca50c520c4e6e
+- name: DefinitelyTyped.polymer
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/a872802c0c84ba98ff207d5e673a1fa867c67fd6/polymer/polymer.d.ts
+  version: a872802c0c84ba98ff207d5e673a1fa867c67fd6
+- name: DefinitelyTyped.threejs
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/8cb9ee3fdfe352cfef672bdfdb5f9c428f915e9f/threejs/three.d.ts
+  version: 8cb9ee3fdfe352cfef672bdfdb5f9c428f915e9f
+- name: DefinitelyTyped.webcomponents
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/46719185c564694c5583c4b7ad94dbb786ecad46/webcomponents.js/webcomponents.js.d.ts
+  version: 46719185c564694c5583c4b7ad94dbb786ecad46
+- name: DefinitelyTyped.d3-array
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/b6746d73a2ddf103c6825449ee2b0953f716d994/types/d3-array/index.d.ts
+  version: b6746d73a2ddf103c6825449ee2b0953f716d994
+- name: DefinitelyTyped.d3-axis
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-axis/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-brush
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-brush/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-chord
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-chord/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-collection
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-collection/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-color
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-color/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-dispatch
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-dispatch/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-drag
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-drag/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-dsv
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-dsv/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-ease
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-ease/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-force
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-force/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-format
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-format/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-hierarchy
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-hierarchy/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-interpolate
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-interpolate/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-path
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-path/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-polygon
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-polygon/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-quadtree
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-quadtree/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-queue
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-queue/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-random
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-random/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-request
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-request/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-scale
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/ff2359e74ce1c539097e47dc586d49d348a94587/types/d3-scale/index.d.ts
+  version: ff2359e74ce1c539097e47dc586d49d348a94587
+- name: DefinitelyTyped.d3-selection
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-selection/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-shape
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-shape/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-time
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-time/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-timer
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-timer/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-transition
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-transition/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-voronoi
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-voronoi/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.d3-zoom
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/526dd2e57684fa586452445a181d37369533d02e/types/d3-zoom/index.d.ts
+  version: 526dd2e57684fa586452445a181d37369533d02e
+- name: DefinitelyTyped.sinon-chai
+  license: MIT
+  url:
+    - https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/b4715b48d6a64a288f4ca6d0d2efcbffb36dd1cf/types/sinon-chai/v2/index.d.ts
+  version: b4715b48d6a64a288f4ca6d0d2efcbffb36dd1cf
+
