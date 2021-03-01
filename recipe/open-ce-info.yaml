@@ -1,3 +1,4 @@
+third_party_packages:
 - name: rules_closure
   license: Apache-2
   url:
@@ -140,9 +141,9 @@
   url:
     - https://registry.npmjs.org/web-component-tester/-/web-component-tester-4.3.6.tgz
   version: 4.3.6
-- license: BSD-equivalent
+- name: PolymerElements.test-fixture
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.test-fixture
   url:
     - https://github.com/PolymerElements/test-fixture/archive/v2.0.1.tar.gz
   version: 2.0.1
@@ -156,9 +157,9 @@
   url:
     - https://github.com/webcomponents/shadycss/archive/v1.9.1.tar.gz
   version: 1.9.1
-- license: BSD-equivalent
+- name: PolymerElements.iron-a11y-announcer
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-a11y-announcer
   url:
     - https://github.com/PolymerElements/iron-a11y-announcer/archive/v2.1.0.tar.gz
   version: 2.1.0
@@ -174,153 +175,153 @@
   url:
     - https://github.com/PolymerElements/iron-ajax/archive/v2.1.3.tar.gz
   version: 2.1.3
-- license: BSD-equivalent
+- name: PolymerElements.iron-autogrow-textarea
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-autogrow-textarea
   url:
     - https://github.com/PolymerElements/iron-autogrow-textarea/archive/v2.2.0.tar.gz
   version: 2.2.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-behaviors
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-behaviors
   url:
     - https://github.com/PolymerElements/iron-behaviors/archive/v2.1.1.tar.gz
   version: 2.1.1
-- license: BSD-equivalent
+- name: PolymerElements.iron-checked-elements-behavior
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-checked-elements-behavior
   url:
     - https://github.com/PolymerElements/iron-checked-element-behavior/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-collapse
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-collapse
   url:
     - https://github.com/PolymerElements/iron-collapse/archive/v2.2.1.tar.gz
   version: 2.2.1
-- license: BSD-equivalent
+- name: PolymerElements.iron-demo-helpers
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-demo-helpers
   url:
     - https://github.com/PolymerElements/iron-demo-helpers/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-dropdown*
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-dropdown*
   url:
     - https://github.com/PolymerElements/iron-dropdown/archive/v2.2.1.tar.gz
   version: 2.2.1
-- license: BSD-equivalent
+- name: PolymerElements.iron-fit-behavior
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-fit-behavior
   url:
     - https://github.com/PolymerElements/iron-fit-behavior/archive/v2.1.1.tar.gz
   version: 2.1.1
-- license: BSD-equivalent
+- name: PolymerElements.iron-flex-layout
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-flex-layout
   url:
     - https://github.com/PolymerElements/iron-flex-layout/archive/v2.0.3.tar.gz
   version: 2.0.3
-- license: BSD-equivalent
+- name: PolymerElements.iron-form-element-behavior*
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-form-element-behavior*
   url:
     - https://github.com/PolymerElements/iron-form-element-behavior/archive/v2.1.3.tar.gz
   version: 2.1.3
-- license: BSD-equivalent
+- name: PolymerElements.iron-icon
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-icon
   url:
     - https://github.com/PolymerElements/iron-icon/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-icons
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-icons
   url:
     - https://github.com/PolymerElements/iron-icons/archive/v2.1.1.tar.gz
   version: 2.1.1
-- license: BSD-equivalent
+- name: PolymerElements.iron-iconset-svg
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-iconset-svg
   url:
     - https://github.com/PolymerElements/iron-iconset-svg/archive/v2.2.0.tar.gz
   version: 2.2.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-image
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-image
   url:
     - https://github.com/PolymerElements/iron-image/archive/v2.2.1.tar.gz
   version: 2.2.1
-- license: BSD-equivalent
+- name: PolymerElements.iron-input
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-input
   url:
     - https://github.com/PolymerElements/iron-input/archive/v2.1.3.tar.gz
   version: 2.1.3
-- license: BSD-equivalent
+- name: PolymerElements.iron-list
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-list
   url:
     - https://github.com/PolymerElements/iron-list/archive/v2.0.19.tar.gz
   version: 2.0.19
-- license: BSD-equivalent
+- name: PolymerElements.iron-menu-behavior
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-menu-behavior
   url:
     - https://github.com/PolymerElements/iron-menu-behavior/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-meta
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-meta
   url:
     - https://github.com/PolymerElements/iron-meta/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-overlay-behavior
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-overlay-behavior
   url:
     - https://github.com/PolymerElements/iron-overlay-behavior/archive/v2.3.3.tar.gz
   version: 2.3.3
-- license: BSD-equivalent
+- name: PolymerElements.iron-pages
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-pages
   url:
     - https://github.com/PolymerElements/iron-pages/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-range-behavior
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-range-behavior
   url:
     - https://github.com/PolymerElements/iron-range-behavior/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-resizeable-behavior
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-resizeable-behavior
   url:
     - https://github.com/PolymerElements/iron-resizable-behavior/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-scroll-target-behavior
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-scroll-target-behavior
   url:
     - https://github.com/PolymerElements/iron-scroll-target-behavior/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-selector
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-selector
   url:
     - https://github.com/PolymerElements/iron-selector/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.iron-validatable-behavior*
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-validatable-behavior*
   url:
     - https://github.com/PolymerElements/iron-validatable-behavior/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: ISC
+- name: PolymerElements.iron-validator-behavior*
+  license: ISC
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.iron-validator-behavior*
   url:
     - https://github.com/PolymerElements/iron-validator-behavior/archive/v2.1.0.tar.gz
   version: 2.1.0
@@ -329,177 +330,177 @@
   url:
     - https://github.com/chjj/marked/archive/v0.3.2.tar.gz
   version: 0.3.2
-- license: BSD-equivalent
+- name: PolymerElements.marked-element
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.marked-element
   url:
     - https://github.com/PolymerElements/marked-element/archive/v2.4.0.tar.gz
   version: 2.4.0
-- license: BSD-equivalent
+- name: PolymerElements.neon-animation
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.neon-animation
   url:
     - https://github.com/PolymerElements/neon-animation/archive/v2.2.1.tar.gz
   version: 2.2.1
-- license: BSD-equivalent
+- name: PolymerElements.paper-behaviors
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-behaviors
   url:
     - https://github.com/PolymerElements/paper-behaviors/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-card
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-card
   url:
     - https://github.com/PolymerElements/paper-card/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-button
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-button
   url:
     - https://github.com/PolymerElements/paper-button/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-checkbox
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-checkbox
   url:
     - https://github.com/PolymerElements/paper-checkbox/archive/v2.0.3.tar.gz
   version: 2.0.3
-- license: BSD-equivalent
+- name: PolymerElements.paper-dialog
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-dialog
   url:
     - https://github.com/PolymerElements/paper-dialog/archive/v2.1.1.tar.gz
   version: 2.1.1
-- license: BSD-equivalent
+- name: PolymerElements.paper-dialog-behavior*
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-dialog-behavior*
   url:
     - https://github.com/PolymerElements/paper-dialog-behavior/archive/v2.2.2.tar.gz
   version: 2.2.2
-- license: BSD-equivalent
+- name: PolymerElements.paper-dialog-scrollable
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-dialog-scrollable
   url:
     - https://github.com/PolymerElements/paper-dialog-scrollable/archive/v2.2.0.tar.gz
   version: 2.2.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-dropdown-menu*
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-dropdown-menu*
   url:
     - https://github.com/PolymerElements/paper-dropdown-menu/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-header-panel
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-header-panel
   url:
     - https://github.com/PolymerElements/paper-header-panel/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-icon-button
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-icon-button
   url:
     - https://github.com/PolymerElements/paper-icon-button/archive/v2.2.0.tar.gz
   version: 2.2.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-input
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-input
   url:
     - https://github.com/PolymerElements/paper-input/archive/v2.2.3.tar.gz
   version: 2.2.3
-- license: BSD-equivalent
+- name: PolymerElements.paper-item
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-item
   url:
     - https://github.com/PolymerElements/paper-item/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-listbox
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-listbox
   url:
     - https://github.com/PolymerElements/paper-listbox/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-material
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-material
   url:
     - https://github.com/PolymerElements/paper-material/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-menu-button*
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-menu-button*
   url:
     - https://github.com/PolymerElements/paper-menu-button/archive/v2.1.1.tar.gz
   version: 2.1.1
-- license: BSD-equivalent
+- name: PolymerElements.paper-progress
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-progress
   url:
     - https://github.com/PolymerElements/paper-progress/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-radio-button
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-radio-button
   url:
     - https://github.com/PolymerElements/paper-radio-button/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-radio-group
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-radio-group
   url:
     - https://github.com/PolymerElements/paper-radio-group/archive/v2.2.0.tar.gz
   version: 2.2.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-ripple
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-ripple
   url:
     - https://github.com/PolymerElements/paper-ripple/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-slider
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-slider
   url:
     - https://github.com/PolymerElements/paper-slider/archive/v2.0.6.tar.gz
   version: 2.0.6
-- license: BSD-equivalent
+- name: PolymerElements.paper-spinner
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-spinner
   url:
     - https://github.com/PolymerElements/paper-spinner/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-style
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-style
   url:
     - https://github.com/PolymerElements/paper-styles/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-tabs
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-tabs
   url:
     - https://github.com/PolymerElements/paper-tabs/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-toast
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-toast
   url:
     - https://github.com/PolymerElements/paper-toast/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-toggle-button*
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-toggle-button*
   url:
     - https://github.com/PolymerElements/paper-toggle-button/archive/v2.1.1.tar.gz
   version: 2.1.1
-- license: BSD-equivalent
+- name: PolymerElements.paper-toolbar
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-toolbar
   url:
     - https://github.com/PolymerElements/paper-toolbar/archive/v2.1.0.tar.gz
   version: 2.1.0
-- license: BSD-equivalent
+- name: PolymerElements.paper-tooltip
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.paper-tooltip
   url:
     - https://github.com/PolymerElements/paper-tooltip/archive/v2.1.1.tar.gz
   version: 2.1.1
@@ -508,9 +509,9 @@
   url:
     - https://github.com/PrismJS/prism/archive/v1.16.0.tar.gz
   version: 1.16.0
-- license: BSD-equivalent
+- name: PolymerElements.prism-element
+  license: BSD-equivalent
   license_url: http://polymer.github.io/LICENSE.txt
-  name: PolymerElements.prism-element
   url:
     - https://github.com/PolymerElements/prism-element/archive/v2.1.0.tar.gz
   version: 2.1.0
