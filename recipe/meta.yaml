@@ -7,15 +7,15 @@ package:
 source:
   git_url: https://github.com/tensorflow/tensorboard.git
   git_rev: {{ version }}
-  string: py_{{ PKG_BUILDNUM }}
   patches:
     - 0001-Updated-rules_nodejs-for-PPC.patch   # [ppc64le]
     - 0002-CVE-2019-1010266.patch
     - 0005-PSIRT-PVR0214103-for-bleach.patch
 
 build:
-  number: 5
+  number: 6
   noarch: python
+  string: py_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
   # packages as it conflicts with a file in this package.
   entry_points:
