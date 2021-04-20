@@ -13,7 +13,7 @@ source:
     - 0005-PSIRT-PVR0214103-for-bleach.patch
 
 build:
-  number: 5
+  number: 6
   noarch: python
   string: py_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
