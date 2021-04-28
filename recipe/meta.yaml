@@ -9,7 +9,6 @@ source:
   git_rev: {{ version }}
   patches:
     - 0001-Updated-rules_nodejs-for-PPC.patch   # [ppc64le]
-#    - 0002-CVE-2019-1010266.patch
     - 0005-PSIRT-PVR0214103-for-bleach.patch
 
 build:
