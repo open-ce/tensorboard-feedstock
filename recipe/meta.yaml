@@ -1,4 +1,4 @@
-{% set version = "2.4.1" %}
+{% set version = "2.5.0" %}
 
 package:
   name: tensorboard
@@ -9,11 +9,11 @@ source:
   git_rev: {{ version }}
   patches:
     - 0001-Updated-rules_nodejs-for-PPC.patch   # [ppc64le]
-    - 0002-CVE-2019-1010266.patch
+#    - 0002-CVE-2019-1010266.patch
     - 0005-PSIRT-PVR0214103-for-bleach.patch
 
 build:
-  number: 6
+  number: 1
   noarch: python
   string: py_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
