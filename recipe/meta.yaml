@@ -13,7 +13,7 @@ source:
     - 0005-PSIRT-PVR0214103-for-bleach.patch
 
 build:
-  number: 7
+  number: 8
   noarch: python
   string: py_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
@@ -25,11 +25,17 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   host:
     - bazel {{ bazel }} 
     - python # noarch package; don't tie to specific python version
     - numpy {{ numpy }}
     - absl-py {{ absl_py }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - python # noarch package; don't tie to specific python version
     - absl-py {{ absl_py }}
