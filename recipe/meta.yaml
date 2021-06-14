@@ -20,6 +20,9 @@ build:
   # packages as it conflicts with a file in this package.
   entry_points:
     - tensorboard = tensorboard.main:run_main
+  ignore_run_exports:
+    - libgcc-ng
+    - libstdcxx-ng
 
 requirements:
   build:
@@ -49,12 +52,11 @@ requirements:
     - six {{ six }}
     - tensorboard-plugin-wit {{ tensorboard_plugin_wit }}
     - werkzeug {{ werkzeug }}
-
-test:
-  requires:
     # Use pins to control cos6/cos7 match
     - libgcc-ng  {{ libgcc }}
     - libstdcxx-ng  {{ libstdcxx }}
+
+test:
   imports:
     - tensorboard
   commands:
