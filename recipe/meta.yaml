@@ -14,7 +14,7 @@ source:
 build:
   number: 1
   noarch: python
-  string: py_{{ PKG_BUILDNUM }}
+  string: py_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
   # packages as it conflicts with a file in this package.
   entry_points:
