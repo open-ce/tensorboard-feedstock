@@ -29,6 +29,7 @@ requirements:
     - python # noarch package; don't tie to specific python version
     - numpy {{ numpy }}
     - absl-py {{ absl_py }}
+    - tensorboard-data-server {{ tensorboard_data_server }}
   run:
     - python # noarch package; don't tie to specific python version
     - absl-py {{ absl_py }}
@@ -42,6 +43,7 @@ requirements:
     - six {{ six }}
     - tensorboard-plugin-wit {{ tensorboard_plugin_wit }}
     - werkzeug {{ werkzeug }}
+    - tensorboard-data-server {{ tensorboard_data_server }}
 
 test:
   imports:
