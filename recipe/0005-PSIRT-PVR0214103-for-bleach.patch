@@ -1,7 +1,7 @@
-From 23f7947db79c12dd9b7d0b303bdbcb5b5d23fecc Mon Sep 17 00:00:00 2001
+From b86f778270637a5e89c3719b1829d8f436aa6b94 Mon Sep 17 00:00:00 2001
 From: Nishidha Panpaliya <npanpa23@in.ibm.com>
-Date: Sat, 9 May 2020 13:22:40 +0000
-Subject: [PATCH] [PSIRT] PVR0214103 for bleach - updated to 3.1.4
+Date: Wed, 28 Apr 2021 12:34:48 +0000
+Subject: [PATCH] Updated Bleach
 
 ---
  third_party/bleach.BUILD | 5 ++---
@@ -9,10 +9,10 @@ Subject: [PATCH] [PSIRT] PVR0214103 for bleach - updated to 3.1.4
  2 files changed, 6 insertions(+), 7 deletions(-)
 
 diff --git a/third_party/bleach.BUILD b/third_party/bleach.BUILD
-index a505afd..e9208c4 100644
+index 8acbe5d..a74b64e 100644
 --- a/third_party/bleach.BUILD
 +++ b/third_party/bleach.BUILD
-@@ -11,12 +11,11 @@ py_library(
+@@ -13,12 +13,11 @@ py_library(
      srcs = [
          "bleach/__init__.py",
          "bleach/callbacks.py",
@@ -24,11 +24,11 @@ index a505afd..e9208c4 100644
 -        "bleach/version.py",
 -    ],
 +    ] + glob(["bleach/_vendor/**/*.py"]),
-     srcs_version = "PY2AND3",
+     srcs_version = "PY3",
      deps = [
          "@org_html5lib",
 diff --git a/third_party/python.bzl b/third_party/python.bzl
-index 854a5c5..39b9711 100644
+index ea28e67..54f1b1d 100644
 --- a/third_party/python.bzl
 +++ b/third_party/python.bzl
 @@ -58,11 +58,11 @@ def tensorboard_python_workspace():
@@ -46,7 +46,6 @@ index 854a5c5..39b9711 100644
 +        sha256 = "436cbe96fe181355607523286b62b4fa836018b524aa815983639190bdd2883b",
          build_file = str(Label("//third_party:bleach.BUILD")),
      )
- 
--- 
-1.8.3.1
 
+--
+1.8.3.1

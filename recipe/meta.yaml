@@ -1,4 +1,4 @@
-{% set version = "2.4.1" %}
+{% set version = "2.5.0" %}
 
 package:
   name: tensorboard
@@ -9,11 +9,10 @@ source:
   git_rev: {{ version }}
   patches:
     - 0001-Updated-rules_nodejs-for-PPC.patch   # [ppc64le]
-    - 0002-CVE-2019-1010266.patch
     - 0005-PSIRT-PVR0214103-for-bleach.patch
 
 build:
-  number: 7
+  number: 1
   noarch: python
   string: py_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
@@ -30,6 +29,7 @@ requirements:
     - python # noarch package; don't tie to specific python version
     - numpy {{ numpy }}
     - absl-py {{ absl_py }}
+    - tensorboard-data-server {{ tensorboard_data_server }}
   run:
     - python # noarch package; don't tie to specific python version
     - absl-py {{ absl_py }}
@@ -43,6 +43,7 @@ requirements:
     - six {{ six }}
     - tensorboard-plugin-wit {{ tensorboard_plugin_wit }}
     - werkzeug {{ werkzeug }}
+    - tensorboard-data-server {{ tensorboard_data_server }}
 
 test:
   imports:
