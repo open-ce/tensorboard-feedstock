@@ -11,9 +11,10 @@ source:
     - 0001-Updated-rules_nodejs-for-PPC.patch   # [ppc64le]
     - 0002-CVE-2019-1010266.patch
     - 0005-PSIRT-PVR0214103-for-bleach.patch
+    - 0003-Use-Werkzeug-2.0.1-to-fix-a-CVE.patch
 
 build:
-  number: 7
+  number: 8
   noarch: python
   string: py_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
