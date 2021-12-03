@@ -1,16 +1,16 @@
-From 252e47af48d312fa7fee59097dbbf3b5791177a8 Mon Sep 17 00:00:00 2001
+From 6bb9a00bdddbac7166b5a95647d3feec1f3e12c1 Mon Sep 17 00:00:00 2001
 From: Nishidha Panpaliya <npanpa23@in.ibm.com>
-Date: Tue, 17 Aug 2021 12:15:09 -0400
+Date: Thu, 21 Oct 2021 07:04:56 -0400
 Subject: [PATCH] Updated patch to add ppc64le support
 
 ---
  WORKSPACE                              |   4 +
- third_party/rules_nodejs_ppc64le.patch | 113 +++++++++++++++++++++++++
- 2 files changed, 117 insertions(+)
+ third_party/rules_nodejs_ppc64le.patch | 277 +++++++++++++++++++++++++
+ 2 files changed, 281 insertions(+)
  create mode 100644 third_party/rules_nodejs_ppc64le.patch
 
 diff --git a/WORKSPACE b/WORKSPACE
-index 196f46f4..4a5e75a3 100644
+index 72ac2d7f..9ed715bc 100644
 --- a/WORKSPACE
 +++ b/WORKSPACE
 @@ -44,6 +44,10 @@ http_archive(
@@ -23,18 +23,17 @@ index 196f46f4..4a5e75a3 100644
 +    patch_args = ["-p1"],
  )
  
- load("@build_bazel_rules_nodejs//:index.bzl", "yarn_install")
+ load("@build_bazel_rules_nodejs//:index.bzl", "node_repositories", "yarn_install")
 diff --git a/third_party/rules_nodejs_ppc64le.patch b/third_party/rules_nodejs_ppc64le.patch
 new file mode 100644
-index 00000000..e5cc8697
+index 00000000..41934e4f
 --- /dev/null
 +++ b/third_party/rules_nodejs_ppc64le.patch
-@@ -0,0 +1,113 @@
-+diff --git a/internal/common/os_name.bzl b/internal/common/os_name.bzl
-+index 586d98b3..4b4fac12 100644
-+--- a/internal/common/os_name.bzl
-++++ b/internal/common/os_name.bzl
-+@@ -21,6 +21,7 @@ OS_ARCH_NAMES = [
+@@ -0,0 +1,277 @@
++diff -Naur rules_org/internal/common/os_name.bzl rules_mod/internal/common/os_name.bzl
++--- rules_org/internal/common/os_name.bzl	1999-12-31 19:00:00.000000000 -0500
+++++ rules_mod/internal/common/os_name.bzl	2021-10-21 06:33:39.766270798 -0400
++@@ -21,6 +21,7 @@
 +     ("linux", "amd64"),
 +     ("linux", "arm64"),
 +     ("linux", "s390x"),
@@ -42,7 +41,7 @@ index 00000000..e5cc8697
 + ]
 + 
 + OS_NAMES = ["_".join(os_arch_name) for os_arch_name in OS_ARCH_NAMES]
-+@@ -46,6 +47,8 @@ def os_name(rctx):
++@@ -46,6 +47,8 @@
 +             return OS_NAMES[3]
 +         elif arch == "s390x":
 +             return OS_NAMES[4]
@@ -51,17 +50,16 @@ index 00000000..e5cc8697
 +         else:
 +             return OS_NAMES[2]
 +     else:
-+@@ -59,4 +62,4 @@ def is_windows_os(rctx):
++@@ -59,4 +62,4 @@
 + 
 + def is_linux_os(rctx):
 +     name = os_name(rctx)
 +-    return name == OS_NAMES[2] or name == OS_NAMES[3] or name == OS_NAMES[4]
 ++    return name == OS_NAMES[2] or name == OS_NAMES[3] or name == OS_NAMES[4] or name == OS_NAMES[5]
-+diff --git a/internal/node/launcher.sh b/internal/node/launcher.sh
-+index 6aa67c17..35b5bf1c 100644
-+--- a/internal/node/launcher.sh
-++++ b/internal/node/launcher.sh
-+@@ -131,6 +131,7 @@ else
++diff -Naur rules_org/internal/node/launcher.sh rules_mod/internal/node/launcher.sh
++--- rules_org/internal/node/launcher.sh	1999-12-31 19:00:00.000000000 -0500
+++++ rules_mod/internal/node/launcher.sh	2021-10-21 06:33:39.796271524 -0400
++@@ -131,6 +131,7 @@
 +       case "${unameArch}" in
 +         aarch64*) readonly node_toolchain="nodejs_linux_arm64/bin/nodejs/bin/node" ;;
 +         s390x*) readonly node_toolchain="nodejs_linux_s390x/bin/nodejs/bin/node" ;;
@@ -69,11 +67,10 @@ index 00000000..e5cc8697
 +         *) readonly node_toolchain="nodejs_linux_amd64/bin/nodejs/bin/node" ;;
 +       esac
 +       ;;
-+diff --git a/internal/node/node_repositories.bzl b/internal/node/node_repositories.bzl
-+index 22d10d68..1a519041 100644
-+--- a/internal/node/node_repositories.bzl
-++++ b/internal/node/node_repositories.bzl
-+@@ -232,6 +232,7 @@ BUILT_IN_NODE_PLATFORMS = [
++diff -Naur rules_org/internal/node/node_repositories.bzl rules_mod/internal/node/node_repositories.bzl
++--- rules_org/internal/node/node_repositories.bzl	1999-12-31 19:00:00.000000000 -0500
+++++ rules_mod/internal/node/node_repositories.bzl	2021-10-21 06:33:39.806271766 -0400
++@@ -232,6 +232,7 @@
 +     "darwin_amd64",
 +     "linux_amd64",
 +     "linux_arm64",
@@ -81,11 +78,10 @@ index 00000000..e5cc8697
 +     "windows_amd64",
 +     "linux_s390x",
 + ]
-+diff --git a/internal/node/node_versions.bzl b/internal/node/node_versions.bzl
-+index 91694dd8..4b17e70c 100644
-+--- a/internal/node/node_versions.bzl
-++++ b/internal/node/node_versions.bzl
-+@@ -790,6 +790,7 @@ NODE_VERSIONS = {
++diff -Naur rules_org/internal/node/node_versions.bzl rules_mod/internal/node/node_versions.bzl
++--- rules_org/internal/node/node_versions.bzl	1999-12-31 19:00:00.000000000 -0500
+++++ rules_mod/internal/node/node_versions.bzl	2021-10-21 06:35:57.699602946 -0400
++@@ -790,6 +790,7 @@
 +     "12.13.0-linux_s390x": ("node-v12.13.0-linux-s390x.tar.xz", "node-v12.13.0-linux-s390x", "a4d6518bd90dd4380a4c7f2c6ff9b78bc57f53ec34fbf03dc15cb47738621f13"),
 +     "12.13.0-linux_amd64": ("node-v12.13.0-linux-x64.tar.xz", "node-v12.13.0-linux-x64", "7a57ef2cb3036d7eacd50ae7ba07245a28336a93652641c065f747adb2a356d9"),
 +     "12.13.0-windows_amd64": ("node-v12.13.0-win-x64.zip", "node-v12.13.0-win-x64", "6f920cebeecb4957b4ef0def6d9b04c49d4582864f8d1a207ce8d0665865781a"),
@@ -93,11 +89,18 @@ index 00000000..e5cc8697
 +     # 12.13.1
 +     "12.13.1-darwin_amd64": ("node-v12.13.1-darwin-x64.tar.gz", "node-v12.13.1-darwin-x64", "12d14c7fbd98876a163a2b7e0aeb13657dc3e967e993efaf2dcacbe475a285e8"),
 +     "12.13.1-linux_arm64": ("node-v12.13.1-linux-arm64.tar.xz", "node-v12.13.1-linux-arm64", "3aef0178a8ab74c8e5c133e23d1896e53ed5c273415d165a0e72e005f5467cba"),
-+diff --git a/toolchains/node/BUILD.bazel b/toolchains/node/BUILD.bazel
-+index 224bcf6f..67949818 100644
-+--- a/toolchains/node/BUILD.bazel
-++++ b/toolchains/node/BUILD.bazel
-+@@ -57,6 +57,14 @@ platform(
++@@ -910,6 +911,7 @@
++     "12.21.0-linux_s390x": ("node-v12.21.0-linux-s390x.tar.xz", "node-v12.21.0-linux-s390x", "038872f0ac5d061c1f299383a7faf9abc1c2c82314e08b2c548a0e5baf99c29f"),
++     "12.21.0-linux_amd64": ("node-v12.21.0-linux-x64.tar.xz", "node-v12.21.0-linux-x64", "eb89c02153cfa25e40170e5e9b0ab43ad55d456af8b72ad2a8c2a42b7a647432"),
++     "12.21.0-windows_amd64": ("node-v12.21.0-win-x64.zip", "node-v12.21.0-win-x64", "d8ae037fb8be60e74fb96124e341fdf1251eae0d5d88d7d86f056d4b0c9440f3"),
+++    "12.21.0-linux_ppc64le": ("node-v12.21.0-linux-ppc64le.tar.xz", "node-v12.21.0-linux-ppc64le", "19cb55de1337b1beb7a8a7241f624b70ddc39687f9f1aabc0a524f2cdee8bce7"),
++     # 12.22.0
++     "12.22.0-darwin_amd64": ("node-v12.22.0-darwin-x64.tar.gz", "node-v12.22.0-darwin-x64", "7f72fd468cd00cf562c8fe2ea8b5e7a3b68027e8454e432db9ffbdd967bf420c"),
++     "12.22.0-linux_arm64": ("node-v12.22.0-linux-arm64.tar.xz", "node-v12.22.0-linux-arm64", "7c784d17e2e4f72afe79df253d893afd8b73396d3a28a7709214673fd8d6fa87"),
++diff -Naur rules_org/toolchains/node/BUILD.bazel rules_mod/toolchains/node/BUILD.bazel
++--- rules_org/toolchains/node/BUILD.bazel	1999-12-31 19:00:00.000000000 -0500
+++++ rules_mod/toolchains/node/BUILD.bazel	2021-10-21 06:33:39.846272734 -0400
++@@ -59,6 +59,14 @@
 +     ],
 + )
 + 
@@ -112,7 +115,7 @@ index 00000000..e5cc8697
 + bzl_library(
 +     name = "bzl",
 +     srcs = glob(["*.bzl"]),
-+@@ -84,6 +92,7 @@ alias(
++@@ -86,6 +94,7 @@
 +         "@bazel_tools//src/conditions:linux_aarch64": "@nodejs_linux_arm64_config//:toolchain",
 +         "@bazel_tools//src/conditions:linux_s390x": "@nodejs_linux_s390x_config//:toolchain",
 +         "@bazel_tools//src/conditions:linux_x86_64": "@nodejs_linux_amd64_config//:toolchain",
@@ -120,7 +123,7 @@ index 00000000..e5cc8697
 +         "@bazel_tools//src/conditions:windows": "@nodejs_windows_amd64_config//:toolchain",
 +         "//conditions:default": "@nodejs_linux_amd64_config//:toolchain",
 +     }),
-+@@ -98,6 +107,7 @@ alias(
++@@ -100,6 +109,7 @@
 +         "@bazel_tools//src/conditions:linux_aarch64": "@nodejs_linux_arm64//:node_bin",
 +         "@bazel_tools//src/conditions:linux_s390x": "@nodejs_linux_s390x//:node_bin",
 +         "@bazel_tools//src/conditions:linux_x86_64": "@nodejs_linux_amd64//:node_bin",
@@ -128,7 +131,7 @@ index 00000000..e5cc8697
 +         "@bazel_tools//src/conditions:windows": "@nodejs_windows_amd64//:node_bin",
 +         "//conditions:default": "@nodejs_linux_amd64//:node_bin",
 +     }),
-+@@ -153,3 +163,14 @@ toolchain(
++@@ -155,3 +165,14 @@
 +     toolchain = "@nodejs_linux_s390x_config//:toolchain",
 +     toolchain_type = ":toolchain_type",
 + )
@@ -143,6 +146,167 @@ index 00000000..e5cc8697
 ++    toolchain_type = ":toolchain_type",
 ++)
 ++
++diff -Naur rules_org/toolchains/node/BUILD.bazel.orig rules_mod/toolchains/node/BUILD.bazel.orig
++--- rules_org/toolchains/node/BUILD.bazel.orig	1969-12-31 19:00:00.000000000 -0500
+++++ rules_mod/toolchains/node/BUILD.bazel.orig	1999-12-31 19:00:00.000000000 -0500
++@@ -0,0 +1,157 @@
+++# Copyright 2018 The Bazel Authors. All rights reserved.
+++#
+++# Licensed under the Apache License, Version 2.0 (the "License");
+++# you may not use this file except in compliance with the License.
+++# You may obtain a copy of the License at
+++#
+++#    http://www.apache.org/licenses/LICENSE-2.0
+++#
+++# Unless required by applicable law or agreed to in writing, software
+++# distributed under the License is distributed on an "AS IS" BASIS,
+++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+++# See the License for the specific language governing permissions and
+++# limitations under the License.
+++# bazel_skylib mocked out
+++# load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
+++load("@build_bazel_rules_nodejs//:index.bzl", bzl_library = "dummy_bzl_library")
+++
+++package(default_visibility = ["//visibility:private"])
+++
+++licenses(["notice"])  # Apache 2.0
+++
+++platform(
+++    name = "darwin_amd64",
+++    constraint_values = [
+++        "@platforms//os:osx",
+++        "@platforms//cpu:x86_64",
+++    ],
+++)
+++
+++platform(
+++    name = "linux_amd64",
+++    constraint_values = [
+++        "@platforms//os:linux",
+++        "@platforms//cpu:x86_64",
+++    ],
+++)
+++
+++platform(
+++    name = "linux_arm64",
+++    constraint_values = [
+++        "@platforms//os:linux",
+++        "@platforms//cpu:aarch64",
+++    ],
+++)
+++
+++platform(
+++    name = "windows_amd64",
+++    constraint_values = [
+++        "@platforms//os:windows",
+++        "@platforms//cpu:x86_64",
+++    ],
+++)
+++
+++platform(
+++    name = "linux_s390x",
+++    constraint_values = [
+++        "@platforms//os:linux",
+++        "@platforms//cpu:s390x",
+++    ],
+++)
+++
+++bzl_library(
+++    name = "bzl",
+++    srcs = glob(["*.bzl"]),
+++    visibility = ["//visibility:public"],
+++)
+++
+++filegroup(
+++    name = "package_contents",
+++    srcs = glob(["*"]),
+++    visibility = ["//:__pkg__"],
+++)
+++
+++# node toolchain type
+++toolchain_type(
+++    name = "toolchain_type",
+++    visibility = ["//visibility:public"],
+++)
+++
+++# Allow targets to use a toolchains attribute, such as sh_binary and genrule
+++# This way they can reference the NODE_PATH make variable.
+++alias(
+++    name = "toolchain",
+++    actual = select({
+++        "@bazel_tools//src/conditions:darwin": "@nodejs_darwin_amd64_config//:toolchain",
+++        "@bazel_tools//src/conditions:linux_aarch64": "@nodejs_linux_arm64_config//:toolchain",
+++        "@bazel_tools//src/conditions:linux_s390x": "@nodejs_linux_s390x_config//:toolchain",
+++        "@bazel_tools//src/conditions:linux_x86_64": "@nodejs_linux_amd64_config//:toolchain",
+++        "@bazel_tools//src/conditions:windows": "@nodejs_windows_amd64_config//:toolchain",
+++        "//conditions:default": "@nodejs_linux_amd64_config//:toolchain",
+++    }),
+++    visibility = ["//visibility:public"],
+++)
+++
+++# Allow targets to declare a dependency on the node binary for the current host platform
+++alias(
+++    name = "node_bin",
+++    actual = select({
+++        "@bazel_tools//src/conditions:darwin": "@nodejs_darwin_amd64//:node_bin",
+++        "@bazel_tools//src/conditions:linux_aarch64": "@nodejs_linux_arm64//:node_bin",
+++        "@bazel_tools//src/conditions:linux_s390x": "@nodejs_linux_s390x//:node_bin",
+++        "@bazel_tools//src/conditions:linux_x86_64": "@nodejs_linux_amd64//:node_bin",
+++        "@bazel_tools//src/conditions:windows": "@nodejs_windows_amd64//:node_bin",
+++        "//conditions:default": "@nodejs_linux_amd64//:node_bin",
+++    }),
+++    visibility = ["//visibility:public"],
+++)
+++
+++toolchain(
+++    name = "node_linux_amd64_toolchain",
+++    target_compatible_with = [
+++        "@platforms//os:linux",
+++        "@platforms//cpu:x86_64",
+++    ],
+++    toolchain = "@nodejs_linux_amd64_config//:toolchain",
+++    toolchain_type = ":toolchain_type",
+++)
+++
+++toolchain(
+++    name = "node_linux_arm64_toolchain",
+++    target_compatible_with = [
+++        "@platforms//os:linux",
+++        "@platforms//cpu:aarch64",
+++    ],
+++    toolchain = "@nodejs_linux_arm64_config//:toolchain",
+++    toolchain_type = ":toolchain_type",
+++)
+++
+++toolchain(
+++    name = "node_darwin_amd64_toolchain",
+++    target_compatible_with = [
+++        "@platforms//os:osx",
+++        "@platforms//cpu:x86_64",
+++    ],
+++    toolchain = "@nodejs_darwin_amd64_config//:toolchain",
+++    toolchain_type = ":toolchain_type",
+++)
+++
+++toolchain(
+++    name = "node_windows_amd64_toolchain",
+++    target_compatible_with = [
+++        "@platforms//os:windows",
+++        "@platforms//cpu:x86_64",
+++    ],
+++    toolchain = "@nodejs_windows_amd64_config//:toolchain",
+++    toolchain_type = ":toolchain_type",
+++)
+++
+++toolchain(
+++    name = "node_linux_s390x_toolchain",
+++    target_compatible_with = [
+++        "@platforms//os:linux",
+++        "@platforms//cpu:s390x",
+++    ],
+++    toolchain = "@nodejs_linux_s390x_config//:toolchain",
+++    toolchain_type = ":toolchain_type",
+++)
 -- 
-2.27.0
+2.23.0
 
