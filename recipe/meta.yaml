@@ -1,4 +1,4 @@
-{% set version = "2.7.0" %}
+{% set version = "2.8.0" %}
 
 package:
   name: tensorboard
@@ -12,7 +12,7 @@ source:
     - 0005-PSIRT-PVR0214103-for-bleach.patch
 
 build:
-  number: 3
+  number: 1
   noarch: python
   string: pyh{{ PKG_HASH }}_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
@@ -40,10 +40,12 @@ requirements:
     - numpy {{ numpy }}
     - protobuf {{ protobuf }}
     - requests {{ requests }}
+    - setuptools {{ setuptools }}
     - six {{ six }}
     - tensorboard-plugin-wit {{ tensorboard_plugin_wit }}
     - werkzeug {{ werkzeug }}
     - tensorboard-data-server {{ tensorboard_data_server }}
+    - wheel {{ wheel }}
 
 test:
   imports:
