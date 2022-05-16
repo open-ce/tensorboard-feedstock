@@ -1,0 +1,39 @@
+From 0b35d9e05ef0ecfaafc9be42392b9ed90d9530f4 Mon Sep 17 00:00:00 2001
+From: Nishidha Panpaliya <npanpa23@in.ibm.com>
+Date: Wed, 4 May 2022 15:22:15 +0000
+Subject: [PATCH] Update rules_apple and apple_support
+
+---
+ WORKSPACE | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/WORKSPACE b/WORKSPACE
+index 72ac2d7f1..bafc9f9d7 100644
+--- a/WORKSPACE
++++ b/WORKSPACE
+@@ -11,6 +11,22 @@ http_archive(
+     ],
+ )
+ 
++http_archive(
++    name = "build_bazel_rules_apple",
++    sha256 = "0052d452af7742c8f3a4e0929763388a66403de363775db7e90adecb2ba4944b",
++    urls = [
++        "https://github.com/bazelbuild/rules_apple/releases/download/0.31.3/rules_apple.0.31.3.tar.gz",
++    ],
++)
++
++http_archive(
++    name = "build_bazel_apple_support",
++    urls = [
++        "https://github.com/bazelbuild/apple_support/releases/download/0.11.0/apple_support.0.11.0.tar.gz",
++    ],
++    sha256 = "76df040ade90836ff5543888d64616e7ba6c3a7b33b916aa3a4b68f342d1b447",
++)
++
+ load("@io_bazel_rules_webtesting//web:repositories.bzl", "web_test_repositories")
+ 
+ web_test_repositories(omit_bazel_skylib = True)
+-- 
+2.34.1
+

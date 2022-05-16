@@ -10,9 +10,10 @@ source:
   patches:
     - 0001-Updated-rules_nodejs-for-PPC.patch   # [ppc64le]
     - 0005-PSIRT-PVR0214103-for-bleach.patch
+    - 0006-Update-rules_apple-and-apple_support.patch
 
 build:
-  number: 1
+  number: 2
   noarch: python
   string: pyh{{ PKG_HASH }}_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
