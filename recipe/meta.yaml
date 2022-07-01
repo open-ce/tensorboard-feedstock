@@ -1,4 +1,4 @@
-{% set version = "2.8.0" %}
+{% set version = "2.9.1" %}
 
 package:
   name: tensorboard
@@ -8,12 +8,11 @@ source:
   git_url: https://github.com/tensorflow/tensorboard.git
   git_rev: {{ version }}
   patches:
-    - 0001-Updated-rules_nodejs-for-PPC.patch   # [ppc64le]
     - 0005-PSIRT-PVR0214103-for-bleach.patch
     - 0006-Update-rules_apple-and-apple_support.patch
 
 build:
-  number: 2
+  number: 1
   noarch: python
   string: pyh{{ PKG_HASH }}_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
@@ -23,8 +22,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}       # [ ppc_arch != "p10"]
-    - {{ compiler('cxx') }}     # [ ppc_arch != "p10"]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   host:
     - bazel {{ bazel }} 
     - python # noarch package; don't tie to specific python version
