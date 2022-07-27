@@ -12,7 +12,7 @@ source:
     - 0006-Update-rules_apple-and-apple_support.patch
 
 build:
-  number: 1
+  number: 2
   noarch: python
   string: pyh{{ PKG_HASH }}_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
@@ -22,8 +22,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}       #[ppc_arch != 'p10']
+    - {{ compiler('cxx') }}     #[ppc_arch != 'p10']
   host:
     - bazel {{ bazel }} 
     - python # noarch package; don't tie to specific python version
