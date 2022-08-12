@@ -37,13 +37,13 @@ index ea28e67..54f1b1d 100644
          urls = [
 -            "http://mirror.tensorflow.org/github.com/mozilla/bleach/archive/v2.0.tar.gz",
 -            "https://github.com/mozilla/bleach/archive/v2.0.tar.gz",
-+            "http://mirror.tensorflow.org/github.com/mozilla/bleach/archive/v3.1.4.tar.gz",
-+            "https://github.com/mozilla/bleach/archive/v3.1.4.tar.gz",
++            "http://mirror.tensorflow.org/github.com/mozilla/bleach/archive/v3.2.0.tar.gz",
++            "https://github.com/mozilla/bleach/archive/v3.2.0.tar.gz",
          ],
 -        strip_prefix = "bleach-2.0",
 -        sha256 = "789dcf3e7daf79c4c78518c6ebafd51bbaf111ac4263a97c08cf8d6a27eda820",
-+        strip_prefix = "bleach-3.1.4",
-+        sha256 = "436cbe96fe181355607523286b62b4fa836018b524aa815983639190bdd2883b",
++        strip_prefix = "bleach-3.2.0",
++        sha256 = "43ee5fbd7a5c0bf980742bf7673b4cdfa265db630a68fc0622ec6095b4c42704",
          build_file = str(Label("//third_party:bleach.BUILD")),
      )
 
