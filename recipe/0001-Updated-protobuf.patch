@@ -1,20 +1,38 @@
-From 82c12c1fcc98cfc6ea035c0ffec9f916a7ff61bc Mon Sep 17 00:00:00 2001
+From b0ce20df65e96166be068911ca173c14ad185fc6 Mon Sep 17 00:00:00 2001
 From: Nishidha Panpaliya <npanpa23@in.ibm.com>
-Date: Wed, 3 Aug 2022 05:00:01 -0400
-Subject: [PATCH] Updated protobuf
+Date: Fri, 7 Oct 2022 12:10:38 +0000
+Subject: [PATCH] Updated protobuf to 3.19.1
 
 ---
- WORKSPACE | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ WORKSPACE | 26 ++++----------------------
+ 1 file changed, 4 insertions(+), 22 deletions(-)
 
 diff --git a/WORKSPACE b/WORKSPACE
-index 238f2b6c9..3e6f40b9f 100644
+index 1773c250c..559f0343c 100644
 --- a/WORKSPACE
 +++ b/WORKSPACE
-@@ -111,11 +111,11 @@ sass_repositories()
+@@ -116,29 +116,11 @@ sass_repositories()
  # might lead to test failures.
  http_archive(
      name = "com_google_protobuf",
+-    patch_args = ["-p1"],
+-    patches = [
+-        # To maintain compatibility with python 3.10 and greater, we need to patch
+-        # in the following protobuf change:
+-        # https://github.com/grpc/grpc/commit/9d61eada0f47d7be793983638c4a29707b192d0c
+-        #
+-        # To reproduce the patch:
+-        # ```
+-        # $ git clone https://github.com/protocolbuffers/protobuf.git
+-        # $ cd protobuf
+-        # $ git checkout tags/v3.9.2 -b my-patch
+-        # $ git cherry-pick 9d61eada0f47d7be793983638c4a29707b192d0c
+-        # $ git diff HEAD~1 > protobuf.patch
+-        # # Remove trailing whitespace to satisify whitespace_hygiene_test.py.
+-        # $ sed -i 's/[[:space:]]*$//' protobuf.patch
+-        # ```
+-        "//third_party:protobuf.patch",
+-    ],
 -    sha256 = "1fbf1c2962af287607232b2eddeaec9b4f4a7a6f5934e1a9276e9af76952f7e0",
 -    strip_prefix = "protobuf-3.9.2",
 +    sha256 = "25f1292d4ea6666f460a2a30038eef121e6c3937ae0f61d610611dfb14b0bd32",
@@ -28,5 +46,5 @@ index 238f2b6c9..3e6f40b9f 100644
  )
  
 -- 
-2.23.0
+2.34.1
 
