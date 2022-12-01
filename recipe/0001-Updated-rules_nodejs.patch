@@ -1,0 +1,88 @@
+From 08a6d510ace32257122528f8849cdf1ba24a5dec Mon Sep 17 00:00:00 2001
+From: Nishidha Panpaliya <npanpa23@in.ibm.com>
+Date: Fri, 7 Oct 2022 13:22:46 +0000
+Subject: [PATCH] Updated rules_nodejs
+
+---
+ WORKSPACE                                     |  4 ++
+ .../0001-Esbuild-for-ppc-and-s390x.patch      | 53 +++++++++++++++++++
+ 2 files changed, 57 insertions(+)
+ create mode 100644 third_party/0001-Esbuild-for-ppc-and-s390x.patch
+
+diff --git a/WORKSPACE b/WORKSPACE
+index 559f0343c..0b75bf8fc 100644
+--- a/WORKSPACE
++++ b/WORKSPACE
+@@ -65,6 +65,10 @@ rules_closure_dependencies(
+ http_archive(
+     name = "build_bazel_rules_nodejs",
+     sha256 = "d63ecec7192394f5cc4ad95a115f8a6c9de55c60d56c1f08da79c306355e4654",
++    patch_args = ["-p1"],
++    patches = [
++       "//third_party:0001-Esbuild-for-ppc-and-s390x.patch",
++    ],
+     urls = [
+         "http://mirror.tensorflow.org/github.com/bazelbuild/rules_nodejs/releases/download/4.6.1/rules_nodejs-4.6.1.tar.gz",
+         "https://github.com/bazelbuild/rules_nodejs/releases/download/4.6.1/rules_nodejs-4.6.1.tar.gz",
+diff --git a/third_party/0001-Esbuild-for-ppc-and-s390x.patch b/third_party/0001-Esbuild-for-ppc-and-s390x.patch
+new file mode 100644
+index 000000000..43c8326dd
+--- /dev/null
++++ b/third_party/0001-Esbuild-for-ppc-and-s390x.patch
+@@ -0,0 +1,53 @@
++From 32dcf2dc96b60c9bba859e0e051e207980afe1cb Mon Sep 17 00:00:00 2001
++From: Nishidha Panpaliya <npanpa23@in.ibm.com>
++Date: Fri, 7 Oct 2022 13:20:40 +0000
++Subject: [PATCH] Esbuild for ppc and s390x
++
++---
++ toolchains/esbuild/esbuild_packages.bzl | 24 ++++++++++++++++++++++++
++ 1 file changed, 24 insertions(+)
++
++diff --git a/toolchains/esbuild/esbuild_packages.bzl b/toolchains/esbuild/esbuild_packages.bzl
++index c4c2d40f..2bf915c9 100644
++--- a/toolchains/esbuild/esbuild_packages.bzl
+++++ b/toolchains/esbuild/esbuild_packages.bzl
++@@ -7,6 +7,8 @@ _DARWIN_ARM64_SHA = "7195f72f21bb85aa5d5556f593470e50d584e7a6a7086e9bfd3f214b6c4
++ _LINUX_AMD64_SHA = "8bf5c5bcd9876274eb2bf17137c542feecd0661e8c32a19e604194e743d05b64"
++ _LINUX_ARM64_SHA = "c2e42e4c646805fa1e13429ba889cf944f4daf70e7a8c64838132e7fc1a14140"
++ _WINDOWS_AMD64_SHA = "ce28305cce437b4ccd1d474d6af13e17bd9608f0da20d0da9090051c7a1e9a72"
+++_LINUX_PPC64LE_SHA = "7f15755168b999283f3903699ceb0ea58406e99dacd1f7cf2d6387a15387d0c5"
+++_LINUX_S390X_SHA = "db4c7d8fe2ad23634316a41376a7ded1efbf4c50b3121bd48ae6df409f0d19e5"
++ 
++ ESBUILD_PACKAGES = struct(
++     version = _VERSION,
++@@ -66,5 +68,27 @@ ESBUILD_PACKAGES = struct(
++                 "@platforms//cpu:x86_64",
++             ],
++         ),
+++        "linux_ppc64le": struct(
+++            sha = _LINUX_PPC64LE_SHA,
+++            urls = [
+++                "https://registry.npmjs.org/esbuild-linux-ppc64le/-/esbuild-linux-ppc64le-%s.tgz" % _VERSION,
+++            ],
+++            binary_path = "bin/esbuild",
+++            exec_compatible_with = [
+++                "@platforms//os:linux",
+++                "@platforms//cpu:ppc",
+++            ],
+++        ),
+++        "linux_s390x": struct(
+++            sha = _LINUX_S390X_SHA,
+++            urls = [
+++                "https://registry.npmjs.org/esbuild-linux-s390x/-/esbuild-linux-s390x-%s.tgz" % _VERSION,
+++            ],
+++            binary_path = "bin/esbuild",
+++            exec_compatible_with = [
+++                "@platforms//os:linux",
+++                "@platforms//cpu:s390x",
+++            ],
+++        ),
++     }),
++ )
++-- 
++2.34.1
++
+-- 
+2.34.1
+
