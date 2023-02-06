@@ -1,6 +1,6 @@
 #!/bin/bash
 # *****************************************************************
-# (C) Copyright IBM Corp. 2018, 2022. All Rights Reserved.
+# (C) Copyright IBM Corp. 2018, 2023. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
 # limitations under the License.
 # *****************************************************************
 set -ex
+
+source open-ce-common-utils.sh
 
 # remove files in setuptools that have spaces, these cause issues with bazel
 rm -rf "${SP_DIR}/setuptools/command/launcher manifest.xml"
@@ -74,5 +76,6 @@ python -m pip install . --no-deps --ignore-installed -vvv
 # Remove bin/tensorboard since the entry_point takes care of creating this.
 rm $PREFIX/bin/tensorboard
 
-bazel clean --expunge
-bazel shutdown
+PID=$(bazel info server_pid)
+echo "PID: $PID"
+cleanup_bazel $PID
