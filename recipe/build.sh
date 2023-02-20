@@ -16,6 +16,8 @@
 # *****************************************************************
 set -ex
 
+source open-ce-common-utils.sh
+
 # remove files in setuptools that have spaces, these cause issues with bazel
 rm -rf "${SP_DIR}/setuptools/command/launcher manifest.xml"
 rm -rf "${SP_DIR}/setuptools/script (dev).tmpl"
