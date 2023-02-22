@@ -13,7 +13,7 @@ source:
     - 0001-Updated-protobuf.patch         #[protobuf == "3.19.*"]
 
 build:
-  number: 3
+  number: 4
   noarch: python
   string: pyh{{ PKG_HASH }}_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
@@ -46,7 +46,7 @@ requirements:
     - tensorboard-plugin-wit {{ tensorboard_plugin_wit }}
     - werkzeug {{ werkzeug }}
     - tensorboard-data-server {{ tensorboard_data_server }}
-    - wheel {{ wheel }}
+    - wheel 
     - packaging
 
 test:
