@@ -47,7 +47,7 @@ requirements:
     - tensorboard-plugin-wit {{ tensorboard_plugin_wit }}
     - werkzeug {{ werkzeug }}
     - tensorboard-data-server {{ tensorboard_data_server }}
-    - wheel {{ wheel }}
+    - wheel
     - packaging
 
 test:
