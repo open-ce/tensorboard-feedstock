@@ -1,7 +1,7 @@
-From 08a6d510ace32257122528f8849cdf1ba24a5dec Mon Sep 17 00:00:00 2001
+From 34c60831234fa248405898a3a974cbb54e3d5908 Mon Sep 17 00:00:00 2001
 From: Nishidha Panpaliya <npanpa23@in.ibm.com>
-Date: Fri, 7 Oct 2022 13:22:46 +0000
-Subject: [PATCH] Updated rules_nodejs
+Date: Tue, 7 Mar 2023 12:34:33 +0000
+Subject: [PATCH] Updated rules nodejs
 
 ---
  WORKSPACE                                     |  4 ++
@@ -10,29 +10,29 @@ Subject: [PATCH] Updated rules_nodejs
  create mode 100644 third_party/0001-Esbuild-for-ppc-and-s390x.patch
 
 diff --git a/WORKSPACE b/WORKSPACE
-index 559f0343c..0b75bf8fc 100644
+index cfc17af6b..49073cf53 100644
 --- a/WORKSPACE
 +++ b/WORKSPACE
-@@ -65,6 +65,10 @@ rules_closure_dependencies(
- http_archive(
-     name = "build_bazel_rules_nodejs",
-     sha256 = "d63ecec7192394f5cc4ad95a115f8a6c9de55c60d56c1f08da79c306355e4654",
+@@ -66,6 +66,10 @@ http_archive(
+         "http://mirror.tensorflow.org/github.com/bazelbuild/rules_nodejs/releases/download/5.7.0/rules_nodejs-5.7.0.tar.gz",
+         "https://github.com/bazelbuild/rules_nodejs/releases/download/5.7.0/rules_nodejs-5.7.0.tar.gz",
+     ],
 +    patch_args = ["-p1"],
 +    patches = [
 +       "//third_party:0001-Esbuild-for-ppc-and-s390x.patch",
 +    ],
-     urls = [
-         "http://mirror.tensorflow.org/github.com/bazelbuild/rules_nodejs/releases/download/4.6.1/rules_nodejs-4.6.1.tar.gz",
-         "https://github.com/bazelbuild/rules_nodejs/releases/download/4.6.1/rules_nodejs-4.6.1.tar.gz",
+ )
+ 
+ load("@build_bazel_rules_nodejs//:repositories.bzl", "build_bazel_rules_nodejs_dependencies")
 diff --git a/third_party/0001-Esbuild-for-ppc-and-s390x.patch b/third_party/0001-Esbuild-for-ppc-and-s390x.patch
 new file mode 100644
-index 000000000..43c8326dd
+index 000000000..4cb19f136
 --- /dev/null
 +++ b/third_party/0001-Esbuild-for-ppc-and-s390x.patch
 @@ -0,0 +1,53 @@
-+From 32dcf2dc96b60c9bba859e0e051e207980afe1cb Mon Sep 17 00:00:00 2001
++From 7e0ef2c5fd8b6e00f69156c685396b80622c720d Mon Sep 17 00:00:00 2001
 +From: Nishidha Panpaliya <npanpa23@in.ibm.com>
-+Date: Fri, 7 Oct 2022 13:20:40 +0000
++Date: Tue, 7 Mar 2023 12:00:27 +0000
 +Subject: [PATCH] Esbuild for ppc and s390x
 +
 +---
@@ -40,13 +40,13 @@ index 000000000..43c8326dd
 + 1 file changed, 24 insertions(+)
 +
 +diff --git a/toolchains/esbuild/esbuild_packages.bzl b/toolchains/esbuild/esbuild_packages.bzl
-+index c4c2d40f..2bf915c9 100644
++index bfdbed5f..5b93ac49 100644
 +--- a/toolchains/esbuild/esbuild_packages.bzl
 ++++ b/toolchains/esbuild/esbuild_packages.bzl
-+@@ -7,6 +7,8 @@ _DARWIN_ARM64_SHA = "7195f72f21bb85aa5d5556f593470e50d584e7a6a7086e9bfd3f214b6c4
-+ _LINUX_AMD64_SHA = "8bf5c5bcd9876274eb2bf17137c542feecd0661e8c32a19e604194e743d05b64"
-+ _LINUX_ARM64_SHA = "c2e42e4c646805fa1e13429ba889cf944f4daf70e7a8c64838132e7fc1a14140"
-+ _WINDOWS_AMD64_SHA = "ce28305cce437b4ccd1d474d6af13e17bd9608f0da20d0da9090051c7a1e9a72"
++@@ -7,6 +7,8 @@ _DARWIN_ARM64_SHA = "6182ba67f1295e1d6e388048d0c892e8279d475e381f0e2ca22539a904d
++ _LINUX_AMD64_SHA = "b8eec10627d3789b312abd2295d52a9979d7d4addf132c328c69977605fb4293"
++ _LINUX_ARM64_SHA = "ea58f83ae0a0283dc479afc66a1380f63204105d1571a3b605b058672538bba0"
++ _WINDOWS_AMD64_SHA = "681c011044aa813cabdc4f6996967f33f6e27c58417b3fcada95291ebbf60a2f"
 ++_LINUX_PPC64LE_SHA = "7f15755168b999283f3903699ceb0ea58406e99dacd1f7cf2d6387a15387d0c5"
 ++_LINUX_S390X_SHA = "db4c7d8fe2ad23634316a41376a7ded1efbf4c50b3121bd48ae6df409f0d19e5"
 + 

@@ -1,4 +1,4 @@
-{% set version = "2.10.1" %}
+{% set version = "2.12.0" %}
 
 package:
   name: tensorboard
@@ -32,6 +32,7 @@ requirements:
     - numpy {{ numpy }}
     - absl-py {{ absl_py }}
     - tensorboard-data-server {{ tensorboard_data_server }}
+    - protobuf {{ protobuf }}
   run:
     - python # noarch package; don't tie to specific python version
     - absl-py {{ absl_py }}
