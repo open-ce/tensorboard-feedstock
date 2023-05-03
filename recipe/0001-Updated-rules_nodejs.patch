@@ -1,6 +1,6 @@
-From 34c60831234fa248405898a3a974cbb54e3d5908 Mon Sep 17 00:00:00 2001
+From 92c13430e9df18227abdbf439c81b8f602ce1efa Mon Sep 17 00:00:00 2001
 From: Nishidha Panpaliya <npanpa23@in.ibm.com>
-Date: Tue, 7 Mar 2023 12:34:33 +0000
+Date: Tue, 11 Apr 2023 04:13:33 -0400
 Subject: [PATCH] Updated rules nodejs
 
 ---
@@ -26,29 +26,29 @@ index cfc17af6b..49073cf53 100644
  load("@build_bazel_rules_nodejs//:repositories.bzl", "build_bazel_rules_nodejs_dependencies")
 diff --git a/third_party/0001-Esbuild-for-ppc-and-s390x.patch b/third_party/0001-Esbuild-for-ppc-and-s390x.patch
 new file mode 100644
-index 000000000..4cb19f136
+index 000000000..558c47032
 --- /dev/null
 +++ b/third_party/0001-Esbuild-for-ppc-and-s390x.patch
 @@ -0,0 +1,53 @@
-+From 7e0ef2c5fd8b6e00f69156c685396b80622c720d Mon Sep 17 00:00:00 2001
++From b1338fe4a27b6e49c7a5e781cccfda608cf66edb Mon Sep 17 00:00:00 2001
 +From: Nishidha Panpaliya <npanpa23@in.ibm.com>
-+Date: Tue, 7 Mar 2023 12:00:27 +0000
-+Subject: [PATCH] Esbuild for ppc and s390x
++Date: Tue, 11 Apr 2023 04:12:44 -0400
++Subject: [PATCH] Added support for ppc64le and s390x
 +
 +---
 + toolchains/esbuild/esbuild_packages.bzl | 24 ++++++++++++++++++++++++
 + 1 file changed, 24 insertions(+)
 +
 +diff --git a/toolchains/esbuild/esbuild_packages.bzl b/toolchains/esbuild/esbuild_packages.bzl
-+index bfdbed5f..5b93ac49 100644
++index bfdbed5f..3a8097df 100644
 +--- a/toolchains/esbuild/esbuild_packages.bzl
 ++++ b/toolchains/esbuild/esbuild_packages.bzl
 +@@ -7,6 +7,8 @@ _DARWIN_ARM64_SHA = "6182ba67f1295e1d6e388048d0c892e8279d475e381f0e2ca22539a904d
 + _LINUX_AMD64_SHA = "b8eec10627d3789b312abd2295d52a9979d7d4addf132c328c69977605fb4293"
 + _LINUX_ARM64_SHA = "ea58f83ae0a0283dc479afc66a1380f63204105d1571a3b605b058672538bba0"
 + _WINDOWS_AMD64_SHA = "681c011044aa813cabdc4f6996967f33f6e27c58417b3fcada95291ebbf60a2f"
-++_LINUX_PPC64LE_SHA = "7f15755168b999283f3903699ceb0ea58406e99dacd1f7cf2d6387a15387d0c5"
-++_LINUX_S390X_SHA = "db4c7d8fe2ad23634316a41376a7ded1efbf4c50b3121bd48ae6df409f0d19e5"
+++_LINUX_PPC64LE_SHA = "ae12b532da6a331a13ea2cd57be564eff6cf4e8c324763db232dcf328ad9b9a5"
+++_LINUX_S390X_SHA = "985b93498ed8e70a4bee7ccbdb68b4da652167299dd081b7e3ea433d4d1869e9"
 + 
 + ESBUILD_PACKAGES = struct(
 +     version = _VERSION,
@@ -81,8 +81,8 @@ index 000000000..4cb19f136
 +     }),
 + )
 +-- 
-+2.34.1
++2.31.1
 +
 -- 
-2.34.1
+2.31.1
 
