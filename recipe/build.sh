@@ -26,9 +26,17 @@ rm -rf "${SP_DIR}/setuptools/script (dev).tmpl"
 SCRIPT_DIR=$RECIPE_DIR/../buildscripts
 $SCRIPT_DIR/set_python_path_for_bazelrc.sh $SRC_DIR
 
+ARCH=$(uname -p)
+
+BAZEL_OPTS=""
+if [[ $ARCH == "s390x" ]]; then
+    BAZEL_OPTS=" --local_cpu_resources=HOST_CPUS*0.50 --local_ram_resources=HOST_RAM*0.50 --jobs=HOST_CPUS*0.5"
+fi
+
 # build using bazel
 mkdir -p ./bazel_output_base
 bazel --bazelrc=${SRC_DIR}/python_configure.bazelrc build \
+    ${BAZEL_OPTS} \
     --host_javabase=@bazel_tools//tools/jdk:remote_jdk11 \
     //tensorboard/pip_package:build_pip_package
 
