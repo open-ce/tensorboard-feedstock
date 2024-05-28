@@ -32,8 +32,8 @@ requirements:
     - absl-py {{ absl_py }}
     - tensorboard-data-server {{ tensorboard_data_server }}
     - protobuf {{ protobuf }}
-#    - pip
     - werkzeug {{ werkzeug }}
+    - typing-extensions {{ typing_extensions }}
   run:
     - python # noarch package; don't tie to specific python version
     - absl-py {{ absl_py }}
@@ -53,9 +53,6 @@ requirements:
     - packaging
 
 test:
-#  requires:
-#    - werkzeug {{ werkzeug }}
-#    - pip 
   imports:
     - tensorboard
   commands:
