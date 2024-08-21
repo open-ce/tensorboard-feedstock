@@ -26,7 +26,7 @@ requirements:
     - {{ compiler('c') }}       #[ppc_arch != 'p10']
     - {{ compiler('cxx') }}     #[ppc_arch != 'p10']
   host:
-    - pip
+    - pip {{ pip }}
     - bazel {{ bazel }} 
     - python # noarch package; don't tie to specific python version
     - numpy {{ numpy }}
