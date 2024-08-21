@@ -13,7 +13,7 @@ source:
     - 0001-Updated-rules_nodejs.patch
 
 build:
-  number: 1
+  number: 2
   noarch: python
   string: pyh{{ PKG_HASH }}_pb{{ protobuf | replace(".*", "")}}_{{ PKG_BUILDNUM }}
   # Make sure there is no tensorboard entry point in the tensorflow-{gpu-,}base
@@ -26,6 +26,7 @@ requirements:
     - {{ compiler('c') }}       #[ppc_arch != 'p10']
     - {{ compiler('cxx') }}     #[ppc_arch != 'p10']
   host:
+    - pip
     - bazel {{ bazel }} 
     - python # noarch package; don't tie to specific python version
     - numpy {{ numpy }}
