@@ -44,7 +44,7 @@ requirements:
     - numpy {{ numpy }}
     - protobuf {{ protobuf }}
     - requests {{ requests }}
-    - setuptools {{ setuptools }}
+    - setuptools
     - six {{ six }}
     - tensorboard-plugin-wit {{ tensorboard_plugin_wit }}
     - werkzeug {{ werkzeug }}
